@@ -75,14 +75,20 @@ function startGame() {
         score++;
     }
     scoreDisplay.innerHTML = `Score: ${score}`;
+    if(score === -1) {
+        scoreDisplay.innerHTML = 0;
+    } else {
+        scoreDisplay.innerHTML = score;
+    }
 }
 
 function countdown() {
     if (timer > 0) {
         timer--;
     } else if (timer === 0) {
-        isPlaying = false;
         gameMessage.innerHTML = 'Game Over!';
+        isPlaying = false;
+        score = -1;
     }
     timeDisplay.innerHTML = timer;
 }
