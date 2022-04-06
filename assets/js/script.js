@@ -1,18 +1,19 @@
 // On load, initialise the game
-window.addEventListener('load', startGame)
+window.addEventListener('load', initialise)
 
+//===================================================================================
 // Add global variables
-let timer = 50;
-let scoreDisplay = 0
-let isPlaying;
+let timer = 5;                                                                      
+let score = 0;                                                                      
+let isPlaying;                                                                        
 
 // DOM constants
-const timeDisplay = document.querySelector('.timer')
-const wordDisplay = document.querySelector('.word-display')
-const wordInput = document.querySelector('.word-input')
-const gameMessage = document.querySelector('.message')
-const showScore = document.querySelector('score')
-
+const timeDisplay = document.querySelector('.timer')                                
+const wordDisplay = document.querySelector('.word-display')                          
+const wordInput = document.querySelector('.word-input')                             
+const gameMessage = document.querySelector('.message')                              
+const scoreDisplay = document.querySelector('.score')                               
+                                                                                    
 const wordArray = [
     'Imagine',
     'Build',
@@ -44,23 +45,54 @@ const wordArray = [
     'Educate',
     'Podium',
     'Win',
-]
+]                                                                                   
+
+//===================================================================================
+
+function initialise() {
+    // Display the words
+    showWords()
+    // Start the game upon typing
+    wordInput.addEventListener('input', startGame)
+    // Set timer countdown
+    setInterval(countdown, 1000);
+}
+
+function showWords() {
+    // Generate a random word
+    const randomWord = Math.floor(Math.random() * wordArray.length);
+    // Display the random word    
+    wordDisplay.innerHTML = wordArray[randomWord]
+}
 
 // Start the game
-function startGame(){
-// Generate a random word
-    const randomWord = Math.floor(Math.random() * wordArray.length);
-// Display the random word    
-    wordDisplay.innerHTML = wordArray[randomWord]
-// Set timer countdown
-    setInterval(countdown, 1000)
+function startGame() {
+    if (checkMatch()) {
+        isPlaying = true;
+        timer = 6;
+        wordInput.value = '';
+        showWords()
+        score++;
+    }
+    scoreDisplay.innerHTML = `Score: ${score}`;
 }
 
 function countdown() {
-    if(timer > 0) {
+    if (timer > 0) {
         timer--;
-    } else if(timer === 0) {
+    } else if (timer === 0) {
         isPlaying = false;
+        gameMessage.innerHTML = 'Game Over!';
     }
     timeDisplay.innerHTML = timer;
+}
+
+function checkMatch() {
+    if (wordInput.value === wordDisplay.innerHTML) {
+        gameMessage.innerHTML = 'Well done!'
+        return true;
+    } else {
+        gameMessage.innerHTML = '';
+        return false;
+    }
 }
