@@ -48,7 +48,7 @@ const wordArray = [
 ]                                                                                   
 
 //===================================================================================
-
+//Start up
 function initialise() {
     // Display the words
     showWords()
@@ -57,14 +57,13 @@ function initialise() {
     // Set timer countdown
     setInterval(countdown, 1000);
 }
-
+//Display the words
 function showWords() {
     // Generate a random word
     const randomWord = Math.floor(Math.random() * wordArray.length);
     // Display the random word    
     wordDisplay.innerHTML = wordArray[randomWord]
 }
-
 // Start the game
 function startGame() {
     if (checkMatch()) {
@@ -81,7 +80,7 @@ function startGame() {
         scoreDisplay.innerHTML = score;
     }
 }
-
+// Countdown timer
 function countdown() {
     if (timer > 0) {
         timer--;
@@ -92,7 +91,7 @@ function countdown() {
     }
     timeDisplay.innerHTML = timer;
 }
-
+// Check if its a match
 function checkMatch() {
     if (wordInput.value === wordDisplay.innerHTML) {
         gameMessage.innerHTML = 'Well done!'
@@ -101,4 +100,13 @@ function checkMatch() {
         gameMessage.innerHTML = '';
         return false;
     }
+}
+//===================================================================================
+let map;
+
+function initMap() {
+    map = new google.maps.Map(document.getElementsByClassName('map'), {
+        center: {lat: 51.509865, lng: -0.118092},
+        zoom:5,
+    });
 }
