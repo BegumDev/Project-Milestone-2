@@ -16,7 +16,7 @@ header h1{
     float: right;
 }
 
-.map{
+#map{
     height: 300px;
     width: 400px;
 }

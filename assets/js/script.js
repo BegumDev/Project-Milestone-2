@@ -102,11 +102,19 @@ function checkMatch() {
     }
 }
 //===================================================================================
-let map;
+// let map;
+
+// function initMap() {
+//    map = new google.maps.Map(document.getElementsByClassName('map'), {
+//         center: {lat: 51.509865, lng: -0.118092},
+//         zoom:5,
+//     });
+// }
 
 function initMap() {
-    map = new google.maps.Map(document.getElementsByClassName('map'), {
-        center: {lat: 51.509865, lng: -0.118092},
-        zoom:5,
-    });
+   var options = {
+       zoom:8,
+       center:{lat: 51.5229, lng: -0.1308}
+   }
+   var map = new google.maps.Map(document.getElementById('map'), options);
 }
