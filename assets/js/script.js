@@ -102,19 +102,20 @@ function checkMatch() {
     }
 }
 //===================================================================================
-// let map;
-
-// function initMap() {
-//    map = new google.maps.Map(document.getElementsByClassName('map'), {
-//         center: {lat: 51.509865, lng: -0.118092},
-//         zoom:5,
-//     });
-// }
+let map;
+let marker;
 
 function initMap() {
-   var options = {
-       zoom:8,
-       center:{lat: 51.5229, lng: -0.1308}
-   }
-   var map = new google.maps.Map(document.getElementById('map'), options);
+    const uni = {lat: 51.509865, lng: -0.118092},
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: uni,
+        zoom:13,
+    });
+
+    marker = new google.maps.Marker({
+        position: uni,
+        map: map,
+    })
+    
+    marker.addListener('click', () => alert('You clicked on the location!'))
 }
