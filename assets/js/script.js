@@ -3,17 +3,17 @@ window.addEventListener('load', initialise)
 
 //===================================================================================
 // Add global variables
-let timer = 5;                                                                      
-let score = 0;                                                                      
-let isPlaying;                                                                        
+let timer = 5;
+let score = 0;
+let isPlaying;
 
 // DOM constants
-const timeDisplay = document.querySelector('.timer')                                
-const wordDisplay = document.querySelector('.word-display')                          
-const wordInput = document.querySelector('.word-input')                             
-const gameMessage = document.querySelector('.message')                              
-const scoreDisplay = document.querySelector('.score')                               
-                                                                                    
+const timeDisplay = document.querySelector('.timer')
+const wordDisplay = document.querySelector('.word-display')
+const wordInput = document.querySelector('.word-input')
+const gameMessage = document.querySelector('.message')
+const scoreDisplay = document.querySelector('.score')
+
 const wordArray = [
     'Imagine',
     'Build',
@@ -45,7 +45,7 @@ const wordArray = [
     'Educate',
     'Podium',
     'Win',
-]                                                                                   
+]
 
 //===================================================================================
 //Start up
@@ -74,7 +74,7 @@ function startGame() {
         score++;
     }
     scoreDisplay.innerHTML = `Score: ${score}`;
-    if(score === -1) {
+    if (score === -1) {
         scoreDisplay.innerHTML = 0;
     } else {
         scoreDisplay.innerHTML = score;
@@ -102,20 +102,3 @@ function checkMatch() {
     }
 }
 //===================================================================================
-let map;
-let marker;
-
-function initMap() {
-    const uni = {lat: 51.509865, lng: -0.118092},
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: uni,
-        zoom:13,
-    });
-
-    marker = new google.maps.Marker({
-        position: uni,
-        map: map,
-    })
-    
-    marker.addListener('click', () => alert('You clicked on the location!'))
-}
