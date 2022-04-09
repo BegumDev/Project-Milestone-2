@@ -1,28 +1,51 @@
-*{
+* {
     margin: 0;
     padding: 0;
     background: #22a9b3;
     color: #ffffff;
 }
-.logo{
-   font-size: 100px;
-   text-align: center;
+
+/* Index.html page */
+/*==================================================================*/
+/*_________________________________Header Styling____________________*/
+.navigation{
+    border: 2px solid #ffffff;
 }
-.navbar ul{
+.logo h1{
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+.logo a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.menu{
+    text-align: center;
+}
+.menu li{
     list-style: none;
-    display: flex;
-    align-content: center;
+    padding: 10px;
+    font-size: 18px;
 }
 .menu a{
     text-decoration: none;
+    color: #ffffff;
+}
+/*_________________________________Game Area Styling____________________*/
+
+.game-box{
+    height: 500px;
+    width: 100%;
+    background-color: antiquewhite;
 }
 
-
 /* Contact page */
+/*==================================================================*/
 
-.contact-form{
+.contact-form {
     width: 70%;
-    height: 600px;
+    height: 650px;
     border: 3px solid #ffffff;
     border-radius: 30px;
     padding: 20px;
@@ -31,16 +54,22 @@
     margin: auto;
 }
 
-label{
+label {
     margin: 10px;
 }
 
-input{
-    padding: 10px;
+.name,
+.email,
+.text-area {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0 auto;
 }
-.submit{
+
+.submit {
     border: 3px solid #ffffff;
-    border-radius: 30px;
+    border-radius: 10px;
     margin: 0 auto;
     width: 120px;
 }
