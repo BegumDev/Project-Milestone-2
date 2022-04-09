@@ -2,10 +2,6 @@
 window.addEventListener('load', initialise)
 
 //===================================================================================
-// Add global variables
-let timer = 5;
-let score = 0;
-let isPlaying;
 
 // DOM constants
 const timeDisplay = document.querySelector('.timer')
@@ -13,6 +9,13 @@ const wordDisplay = document.querySelector('.word-display')
 const wordInput = document.querySelector('.word-input')
 const gameMessage = document.querySelector('.message')
 const scoreDisplay = document.querySelector('.score')
+
+wordInput.focus()
+
+// Add global variables
+let timer = 6;
+let score = 0;
+let isPlaying;
 
 const wordArray = [
     'Imagine',
@@ -74,10 +77,11 @@ function startGame() {
         score++;
     }
     scoreDisplay.innerHTML = `Score: ${score}`;
+
     if (score === -1) {
-        scoreDisplay.innerHTML = 0;
+        scoreDisplay.innerHTML = `Score: 0`;
     } else {
-        scoreDisplay.innerHTML = score;
+        scoreDisplay.innerHTML = `Score: ${score}`;
     }
 }
 // Countdown timer
@@ -86,8 +90,8 @@ function countdown() {
         timer--;
     } else if (timer === 0) {
         gameMessage.innerHTML = 'Game Over!';
-        isPlaying = false;
         score = -1;
+        isPlaying = false;
     }
     timeDisplay.innerHTML = timer;
 }
@@ -97,7 +101,7 @@ function checkMatch() {
         gameMessage.innerHTML = 'Well done!'
         return true;
     } else {
-        gameMessage.innerHTML = '';
+        gameMessage.innerHTML = 'Typing...';
         return false;
     }
 }
