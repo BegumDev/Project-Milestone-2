@@ -8,13 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Type It Fast!</title>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
     <script type="text/javascript">
-   (function(){
-      emailjs.init("GMsyG-ZcfBVb7hIMf");
+        (function() {
+            emailjs.init("GMsyG-ZcfBVb7hIMf");
+        })();
     </script>
 </head>
 <body>
@@ -40,19 +40,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 contact-form">
-                    <form onsubmit="return sendMail(this);">
-                        <label for="fname" class="fname">First Name:</label>
-                        <input type="text" class="fname" placeholder="Enter your first name...">
-                        <label for="sname" class="sname">Surname:</label>
-                        <input type="text" class="sname" placeholder="Enter your surname...">
-                        <label for="email" class="email">Email Address:</label>
-                        <input type="email" class="email" required placeholder="Enter your email address...">
-                        <label for="text-area" class="text-area">Your Message:</label>
-                        <input type="text-area" class="text-area" placeholder="Enter your message here...">
+                    <!-- <form onsubmit="return sendMail(this);"> -->
+                        <label for="name" id="name">Full Name:</label>
+                        <input type="text" class="name" name="fame" placeholder="Enter your full name..." required>
+                        <label for="email" id="email">Email Address:</label>
+                        <input type="email" class="email" name="emailaddress" required placeholder="Enter your email address...">
+                        <label for="text-area" id="text-area">Your Message:</label>
+                        <textarea rows="8" id="message" class="text-area" placeholder="Enter your message here..." required></textarea>
                         <br>
                         <br>
-                        <input type="submit" class="submit" value="Submit">
-                    </form>
+                        <button onclick="sendMail()" class="submit">Submit</button>
+                    <!-- </form> -->
                 </div>
             </div>
         </div>
