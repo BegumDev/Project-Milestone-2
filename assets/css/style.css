@@ -1,22 +1,50 @@
 *{
     margin: 0;
     padding: 0;
+    background: #22a9b3;
+    color: #ffffff;
+}
+.logo{
+   font-size: 50px;
+   text-align: center;
+}
+.navbar ul{
+    list-style: none;
+    display: flex;
+    align-content: center;
+}
+.menu a{
+    text-decoration: none;
 }
 
-body{
-    background-color: #1598;
-    font-family: 'Orbitron', sans-serif;
-}
 
-header h1{
-    text-align: center;
-}
 
-.navbar{
-    float: right;
-}
 
-#map{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #map{
     height: 300px;
     width: 400px;
-}
+} */
