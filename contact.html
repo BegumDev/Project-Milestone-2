@@ -24,40 +24,42 @@
 <body>
     <header>
         <nav class="navigation">
-            <div class="row">
-                <div class="col-12 logo">
-                    <h1>Type It Fast!</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 logo">
+                        <h1><a href="index.html">Type It Fast!</a></h1>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <ul class="menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
     <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 contact-form">
-                    <!-- <form onsubmit="return sendMail(this);"> -->
-                        <label for="name" id="name">Full Name:</label>
-                        <input type="text" class="name" name="fame" placeholder="Enter your full name..." required>
-                        <label for="email" id="email">Email Address:</label>
-                        <input type="email" class="email" name="emailaddress" required placeholder="Enter your email address...">
-                        <label for="text-area" id="text-area">Your Message:</label>
-                        <textarea rows="8" cols="25" id="message-box" class="text-area" placeholder="Enter your message here..." required></textarea>
-                        <br>
-                        <br>
-                        <button onclick="sendMail()" class="submit">Submit</button>
-                    <!-- </form> -->
-                </div>
+        <div class="row">
+            <div class="col-12 contact-form">
+                <!-- <form onsubmit="return sendMail(this);"> -->
+                    <label for="name" id="name">Full Name:</label>
+                    <input type="text" class="name" name="fame" placeholder="Enter your full name..." required>
+                    <label for="email" id="email">Email Address:</label>
+                    <input type="email" class="email" name="emailaddress" required placeholder="Enter your email address...">
+                    <label for="text-area" id="text-area">Your Message:</label>
+                    <textarea rows="8" cols="25" id="message-box" class="text-area" placeholder="Enter your message here..." required></textarea>
+                    <br>
+                    <br>
+                    <button onclick="sendMail()" class="submit">Submit</button>
+                <!-- </form> -->
             </div>
-        </div>
+         </div>
     </section>
 
     <footer>
