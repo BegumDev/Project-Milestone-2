@@ -109,10 +109,22 @@ function checkMatch() {
 
 function showInstruction(){
     let help = document.querySelector('.instructions');
+    let helpBtn = document.querySelector('.help-button');
 
     if(help.style.display === 'none') {
-        help.style.display = 'block'
+        help.style.display = 'block';
+        helpBtn.style.display = 'none';
     } else {
         help.style.display = 'none'
+        helpBtn.style.display = 'block';
+    }
+}
+function closeInstructions() {
+    let help = document.querySelector('.instructions');
+    let helpBtn = document.querySelector('.help-button');
+
+    if(help.style.display = 'block') {
+        help.style.display = 'none';
+        helpBtn.style.display = 'block';
     }
 }
