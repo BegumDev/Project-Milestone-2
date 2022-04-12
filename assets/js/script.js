@@ -106,3 +106,13 @@ function checkMatch() {
     }
 }
 //===================================================================================
+
+function showInstruction(){
+    let help = document.querySelector('.instructions');
+
+    if(help.style.display === 'none') {
+        help.style.display = 'block'
+    } else {
+        help.style.display = 'none'
+    }
+}
