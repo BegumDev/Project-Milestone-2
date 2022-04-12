@@ -2,7 +2,7 @@ function sendMail(params) {
     let parameters = {
         from_name:document.getElementById('name').value,
         from_email:document.getElementById('email').value,
-        project_request:document.getElementById('message').value,
+        project_request:document.getElementById('message-box').value,
     };
 
     emailjs.send('gmail', 'Test email',parameters)
