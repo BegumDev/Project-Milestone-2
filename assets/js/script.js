@@ -1,5 +1,5 @@
 // On load, initialise the game
-window.addEventListener('load', initialise)
+document.addEventListener('DOMContentLoaded', initialise)
 
 //===================================================================================
 
