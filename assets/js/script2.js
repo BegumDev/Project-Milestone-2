@@ -1,5 +1,5 @@
 // On load, initialise the game
-document.addEventListener('DOMContentLoaded', startGame)
+document.addEventListener('DOMContentLoaded', intro)
 
 //===================================================================================
 
@@ -14,11 +14,11 @@ const showInstruction = document.querySelector('.help-btn')
 const restartBtn = document.querySelector('.restart-btn')
 
 
-
 // Event listeners
 closeInstruction.addEventListener('click', closeInstructions)
 showInstruction.addEventListener('click', showInstructions)
 restartBtn.addEventListener('click', restart)
+// startMsg.addEventListener('click', )
 
 
 // Add global variables
@@ -62,6 +62,11 @@ const wordArray = [
 
 //===================================================================================
 
+function intro() {
+    alert('Do you wish to start the game?')
+    startGame();
+}
+
 //Display the words
 function showWords() {
     // Generate a random word
@@ -73,8 +78,11 @@ function showWords() {
 function startGame() {
     // Display the words
     showWords()
+    // Focus on the input box
     wordInput.focus()
+    //Start counting down time
     setInterval(countdown, 1000);
+    // Check the users input against the word displayed
     wordInput.addEventListener('input', function(){
         if (checkMatch()) {
             isPlaying = true;
