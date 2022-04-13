@@ -67,16 +67,17 @@
             <button class="bg-danger close" onclick="closeInstructions()">X</button>
             <h2>Type each word in under 5 seconds. Don't let the timer run out or it will be game over!</h2>
         </div>
-        <button onclick="showInstruction()" class="help-button" >How to play</button>
+        <button class="help-btn" onclick="showInstruction()">How to play</button>
         <br>
         <br>
         <div class="game-box">
             <div class="row">
                 <div class="col-12 time-box">Time: <span class="timer"></span></div>
                 <div class="word-display col-12">Test</div>
-                <input type="text" class="word-input" placeholder="enter your text here...">
+                <input type="text" class="word-input" placeholder="Enter your text here...">
                 <div class="message col-12"></div>
                 <div class="col-12"><span class="score">Score: 0</span></div>
+                <button class="bg-success restart-btn" onclick="restart()">Restart</button>
             </div>
         </div>
     </section>

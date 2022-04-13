@@ -10,13 +10,12 @@ const wordInput = document.querySelector('.word-input')
 const gameMessage = document.querySelector('.message')
 const scoreDisplay = document.querySelector('.score')
 
-wordInput.focus()
-
 // Add global variables
 let timer = 6;
 let score = 0;
 let isPlaying;
 
+// Word list
 const wordArray = [
     'Imagine',
     'Build',
@@ -55,6 +54,8 @@ const wordArray = [
 function initialise() {
     // Display the words
     showWords()
+    // Focus on the word-input
+    wordInput.focus()
     // Start the game upon typing
     wordInput.addEventListener('input', startGame)
     // Set timer countdown
@@ -106,12 +107,13 @@ function checkMatch() {
     }
 }
 //===================================================================================
-
+// Show instructions when help button is clicked
 function showInstruction(){
     let help = document.querySelector('.instructions');
-    let helpBtn = document.querySelector('.help-button');
+    let helpBtn = document.querySelector('.help-btn');
+    const helpDisplay = window.getComputedStyle(help).getPropertyValue('display')
 
-    if(help.style.display === 'none') {
+    if(helpDisplay === 'none') {
         help.style.display = 'block';
         helpBtn.style.display = 'none';
     } else {
@@ -119,12 +121,25 @@ function showInstruction(){
         helpBtn.style.display = 'block';
     }
 }
+// Hide instructions upon closing
 function closeInstructions() {
     let help = document.querySelector('.instructions');
-    let helpBtn = document.querySelector('.help-button');
+    let helpBtn = document.querySelector('.help-btn');
 
     if(help.style.display = 'block') {
         help.style.display = 'none';
         helpBtn.style.display = 'block';
     }
+}
+
+function restart(){
+    wordInput.focus()
+    wordInput.value = '';
+    showWords();
+    timer = 6;
+    countdown();
+    checkMatch();
+    gameMessage.innerHTML = "";
+    scoreDisplay.innerHTML = `Score: 0`;
+    score++;
 }

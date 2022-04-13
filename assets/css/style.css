@@ -61,11 +61,19 @@
     font-size: 12px;
     color: #0e0202;
 }
-.help-button{
-    margin-left: 30px;
+.help-btn{
+    display: block;
+    border: 2px solid #861111;
+    border-radius: 30px;
+    margin: 0 auto;
     margin-top: 30px;
+}
+.restart-btn{
     border: 2px solid  #861111;
     border-radius: 30px;
+    width: 80px;
+    margin-top: 20px;
+    margin: 0 auto;
 }
 .game-box{
     width: 80%;
