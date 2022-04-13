@@ -136,10 +136,8 @@ function restart(){
     wordInput.focus()
     wordInput.value = '';
     showWords();
-    timer = 6;
-    countdown();
-    checkMatch();
     gameMessage.innerHTML = "";
     scoreDisplay.innerHTML = `Score: 0`;
-    score++;
+    score = 0;
+    timer = 6;
 }
