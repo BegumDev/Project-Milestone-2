@@ -12,13 +12,14 @@ const scoreDisplay = document.querySelector('.score')
 const closeInstruction = document.querySelector('.close')
 const showInstruction = document.querySelector('.help-btn')
 const restartBtn = document.querySelector('.restart-btn')
+const introDisplay = document.querySelector('.introBtn')
+const modalDisplay = document.querySelector('.modal-container')
 
 
 // Event listeners
 closeInstruction.addEventListener('click', closeInstructions)
 showInstruction.addEventListener('click', showInstructions)
 restartBtn.addEventListener('click', restart)
-// startMsg.addEventListener('click', )
 
 
 // Add global variables
@@ -61,12 +62,13 @@ const wordArray = [
 ]
 
 //===================================================================================
-
 function intro() {
-    alert('Do you wish to start the game?')
-    startGame();
+    // Listen out for the click, once clicked hide the modal and start the game
+    introDisplay.addEventListener('click', () => {
+        modalDisplay.classList.add('hide')
+        startGame()
+    })
 }
-
 //Display the words
 function showWords() {
     // Generate a random word

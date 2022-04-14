@@ -37,13 +37,41 @@
 
 
 /*_________________________________Game Area Styling____________________*/
-#start-box{
-    width: 300px;
-    height: 300px;
-    border: 2px solid orange;
+.modal-container{
+    background-color: rgba(235, 83, 83, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-msg{
+    background-color: #861111;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px;
+    border-radius: 30px;
+    text-align: center;
+}
+.modal-msg, h2 h3{
+    width: 80%;
+}
+.introBtn{
+    margin-top: 20px;
+    border-radius: 30px;
+    width: 220px;
+    font-size: 30px;
+    padding: 8px;
+}
+.show{
+    display: block;
+}
+.hide{
     display: none;
 }
-
 .instructions{
     width: 70%;
     text-align: center;
