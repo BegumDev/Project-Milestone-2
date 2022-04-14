@@ -62,6 +62,7 @@ const wordArray = [
 ]
 
 //===================================================================================
+// Trigger the modal with user control of starting the game
 function intro() {
     // Listen out for the click, once clicked hide the modal and start the game
     introDisplay.addEventListener('click', () => {

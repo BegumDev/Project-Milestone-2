@@ -166,7 +166,11 @@
     margin-top: 20px;
     font-size: 30px;
 }
-
+footer{
+    height: 100px;
+    width: 100%;
+    background-color: #861111;
+}
 
 
 
