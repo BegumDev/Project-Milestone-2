@@ -1,19 +1,6 @@
-// function sendMail(params) {
-//     let parameters = {
-//         from_name:document.getElementById('name').value,
-//         from_email:document.getElementById('email').value,
-//         project_request:document.getElementById('message').value,
-//     };
-
-//     emailjs.send('gmail', 'Test email',parameters)
-//     .then(function(response){
-//         console.log('Success', response);
-//     }),
-//     function(error) {
-//         console.log('Error', response);
-//     }
-//     return false;
-// }
+const nameField = document.querySelector('.name')
+const emailField = document.querySelector('.email')
+const messageField = document.querySelector('#message')
 
 function sendMail(contactForm) {
     emailjs.send('gmail', 'Test email', {
@@ -24,6 +11,10 @@ function sendMail(contactForm) {
     .then(
         function(response) {
             console.log('Success', response);
+            nameField.value = "";
+            emailField.value = "";
+            messageField.value = "";
+            alert('Thanks, we will be in touch shortly.');
         },
         function (error){
             console.log('Failed', error);

@@ -150,7 +150,7 @@ function closeInstructions() {
         helpBtn.style.display = 'block';
     }
 }
-
+// Restart the game on click
 function restart(){
     wordInput.focus()
     wordInput.value = '';
