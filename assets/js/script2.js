@@ -169,7 +169,6 @@ function closeInstructions() {
         helpBtn.style.display = 'block';
     }
 }
-
 // Restart the game on click
 function restart() {
     timer = 6
