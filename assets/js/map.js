@@ -14,7 +14,7 @@ function initMap() {
             zoom: 13,
         });
 // Set the information to be displayed in the clicked location popup window
-    const infoWindowString = 'This is the info window'
+    const infoWindowString = 'Tech Solutions\n London\n W12 4DY\n 0207 897 458'
 
     const infoWindow = new google.maps.InfoWindow({
         content: infoWindowString,
