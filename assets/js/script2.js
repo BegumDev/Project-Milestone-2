@@ -105,8 +105,6 @@ function startGame() {
         } 
     })
 }
-
-
 // Countdown timer
 function countdown() {
     gameInterval = setInterval(() => {
@@ -172,10 +170,10 @@ function closeInstructions() {
     }
 }
 
-
 // Restart the game on click
 function restart() {
     timer = 6
+    clearInterval(gameInterval)
     countdown()
     showWords();
     wordInput.focus()
