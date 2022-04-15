@@ -20,7 +20,7 @@ const modalDisplay = document.querySelector('.modal-container')
 // Event listeners
 closeInstruction.addEventListener('click', closeInstructions)
 showInstruction.addEventListener('click', showInstructions)
-// restartBtn.addEventListener('click', restart)
+restartBtn.addEventListener('click', restart)
 
 
 // Add global variables
@@ -86,7 +86,6 @@ function startGame() {
     wordInput.focus()
     // Start the timer
     countdown()
-    // const gameInterval = setInterval(countdown, 1000)
     // Check the users input against the word displayed
     wordInput.addEventListener('input', function(){
 
@@ -175,15 +174,14 @@ function closeInstructions() {
 
 
 // Restart the game on click
+function restart() {
+    timer = 6
+    countdown()
+    showWords();
+    wordInput.focus()
+    gameMessage.innerHTML = "";
+    wordInput.value = '';
+    scoreDisplay.innerHTML = `Score: 0`;
+    score = 0;
+}
 
-
-
-
-
-// timer = 6
-// showWords();
-// wordInput.focus()
-// gameMessage.innerHTML = "";
-// wordInput.value = '';
-// scoreDisplay.innerHTML = `Score: 0`;
-// score = 0;
