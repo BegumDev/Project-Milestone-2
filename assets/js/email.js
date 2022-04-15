@@ -1,6 +1,4 @@
-const nameField = document.querySelector('.name')
-const emailField = document.querySelector('.email')
-const messageField = document.querySelector('#message')
+const formClear = document.querySelector('.form')
 
 function sendMail(contactForm) {
     emailjs.send('gmail', 'Test email', {
@@ -11,9 +9,7 @@ function sendMail(contactForm) {
     .then(
         function(response) {
             console.log('Success', response);
-            nameField.value = "";
-            emailField.value = "";
-            messageField.value = "";
+            formClear.reset()
             alert('Thanks, we will be in touch shortly.');
         },
         function (error){

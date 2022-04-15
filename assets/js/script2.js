@@ -67,7 +67,7 @@ function intro() {
     // Listen out for the click, once clicked hide the modal and start the game
     introDisplay.addEventListener('click', () => {
         modalDisplay.classList.add('hide')
-        startGame()
+        startGame();
     })
 }
 //Display the words
@@ -102,7 +102,6 @@ function startGame() {
             scoreDisplay.innerHTML = `Score: ${score}`;
         }
     })
-    
 }
 // Countdown timer
 function countdown() {
@@ -151,7 +150,7 @@ function closeInstructions() {
     }
 }
 // Restart the game on click
-function restart(){
+function restart() {
     wordInput.focus()
     wordInput.value = '';
     showWords();
