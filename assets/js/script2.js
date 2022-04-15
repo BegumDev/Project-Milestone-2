@@ -16,10 +16,11 @@ const introDisplay = document.querySelector('.introBtn')
 const modalDisplay = document.querySelector('.modal-container')
 
 
+
 // Event listeners
 closeInstruction.addEventListener('click', closeInstructions)
 showInstruction.addEventListener('click', showInstructions)
-restartBtn.addEventListener('click', restart)
+// restartBtn.addEventListener('click', restart)
 
 
 // Add global variables
@@ -83,10 +84,12 @@ function startGame() {
     showWords()
     // Focus on the input box
     wordInput.focus()
-    //Start counting down time
-    setInterval(countdown, 1000);
+    // Start the timer
+    countdown()
+    // const gameInterval = setInterval(countdown, 1000)
     // Check the users input against the word displayed
     wordInput.addEventListener('input', function(){
+
         if (checkMatch()) {
             isPlaying = true;
             timer = 6;
@@ -100,20 +103,40 @@ function startGame() {
             scoreDisplay.innerHTML = `Score: 0`;
         } else {
             scoreDisplay.innerHTML = `Score: ${score}`;
-        }
+        } 
     })
 }
+
+
 // Countdown timer
 function countdown() {
-    if (timer > 0) {
-        timer--;
-    } else if (timer === 0) {
-        gameMessage.innerHTML = 'Game Over!';
-        score = -1;
-        isPlaying = false;
-    }
-    timeDisplay.innerHTML = timer;
+    gameInterval = setInterval(() => {
+        if(timer > 0){
+            timer--;
+            console.log('on') // Keep this here to check timer is still working
+        } else if(timer === 0) {
+            clearInterval(gameInterval)
+            gameMessage.innerHTML = 'Game Over!';
+            score = -1;
+            isPlaying = false;
+            console.log('off') // Keep this here to check timer is still working
+        }
+        timeDisplay.innerHTML = timer;
+    }, 1000)
 }
+// function countdown() {
+//     if (timer > 0) {
+//         timer--;
+//     } else if (timer === 0) {
+//         console.log('test')
+//         gameMessage.innerHTML = 'Game Over!';
+//         score = -1;
+//         isPlaying = false;
+//     }
+//     timeDisplay.innerHTML = timer;
+// }
+
+
 // Check if its a match
 function checkMatch() {
     if (wordInput.value === wordDisplay.innerHTML) {
@@ -149,13 +172,18 @@ function closeInstructions() {
         helpBtn.style.display = 'block';
     }
 }
+
+
 // Restart the game on click
-function restart() {
-    wordInput.focus()
-    wordInput.value = '';
-    showWords();
-    gameMessage.innerHTML = "";
-    scoreDisplay.innerHTML = `Score: 0`;
-    score = 0;
-    timer = 6;
-}
+
+
+
+
+
+// timer = 6
+// showWords();
+// wordInput.focus()
+// gameMessage.innerHTML = "";
+// wordInput.value = '';
+// scoreDisplay.innerHTML = `Score: 0`;
+// score = 0;
