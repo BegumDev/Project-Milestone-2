@@ -87,7 +87,7 @@ function startGame() {
     // Start the timer
     countdown()
     // Check the users input against the word displayed
-    wordInput.addEventListener('input', function(){
+    wordInput.addEventListener('input', function () {
 
         if (checkMatch()) {
             isPlaying = true;
@@ -97,21 +97,21 @@ function startGame() {
             score++;
         }
         scoreDisplay.innerHTML = `Score: ${score}`;
-    
+
         if (score === -1) {
             scoreDisplay.innerHTML = `Score: 0`;
         } else {
             scoreDisplay.innerHTML = `Score: ${score}`;
-        } 
+        }
     })
 }
 // Countdown timer
 function countdown() {
     gameInterval = setInterval(() => {
-        if(timer > 0){
+        if (timer > 0) {
             timer--;
             console.log('on') // Keep this here to check timer is still working
-        } else if(timer === 0) {
+        } else if (timer === 0) {
             clearInterval(gameInterval)
             gameMessage.innerHTML = 'Game Over!';
             score = -1;
@@ -146,12 +146,12 @@ function checkMatch() {
 }
 //===================================================================================
 // Show instructions when help button is clicked
-function showInstructions(){
+function showInstructions() {
     let help = document.querySelector('.instructions');
     let helpBtn = document.querySelector('.help-btn');
     const helpDisplay = window.getComputedStyle(help).getPropertyValue('display')
 
-    if(helpDisplay === 'none') {
+    if (helpDisplay === 'none') {
         help.style.display = 'block';
         helpBtn.style.display = 'none';
     } else {
@@ -164,7 +164,7 @@ function closeInstructions() {
     let help = document.querySelector('.instructions');
     let helpBtn = document.querySelector('.help-btn');
 
-    if(help.style.display = 'block') {
+    if (help.style.display = 'block') {
         help.style.display = 'none';
         helpBtn.style.display = 'block';
     }
@@ -181,4 +181,3 @@ function restart() {
     scoreDisplay.innerHTML = `Score: 0`;
     score = 0;
 }
-
