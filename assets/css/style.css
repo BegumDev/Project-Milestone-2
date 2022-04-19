@@ -407,3 +407,49 @@ footer a {
         margin-top: 20px;
     }
 }
+
+@media screen and (min-width: 1950px) and (max-width:2000px){
+    
+    .help-btn{
+        font-size: 30px;
+        width: 260px;
+    }
+    .game-box{
+        height: 600px;
+        width: 50%;
+    }
+    .word-display{
+        margin-top: 40px;
+        font-size: 50px;
+    }
+    .time-box{
+        height: 110px;
+        width: 110px;
+        font-size: 30px;
+    }
+    .timer{
+        font-size: 35px;
+    }
+    .word-input{
+        height: 80px;
+        font-size: 40px;
+    }
+    .message{
+        font-size: 40px;
+    }
+    .score{
+        font-size: 60px;
+    }
+    .restart-btn{
+        font-size: 30px;
+        width: 250px;
+    }
+
+    /*=====================================================*/
+    .contact-form{
+        width: 40%;
+    }
+    label{
+        width: 100%;
+    }
+}
