@@ -333,3 +333,71 @@ footer a {
     }
 
 }
+
+/*===========================================================*/
+
+@media screen and (min-width:769px) and (max-width:1024px){
+    
+/*---------------------------Homepage-------------------*/
+    .help-btn{
+        font-size: 30px;
+        width: 250px;
+    }
+    .game-box{
+        height: 550px;
+    }
+    .word-display {
+        margin-right: 70px;
+        margin-left: 70px;
+        width: 80%;
+    }
+    .word-input{
+        height: 70px;
+        font-size: 30px;
+    }
+/*---------------------------Contact Page-------------------*/
+
+    .contact-form{
+        width: 70%;
+    }
+    label{
+        text-align: center;
+        width: 100%;
+    }
+    #submit-email{
+        margin-top: 20px;
+    }
+}
+/*---------------------------Homepage-------------------*/
+@media screen and (min-width: 1025px) and (max-width:1440px){
+    
+    .help-btn{
+        font-size: 30px;
+        width: 240px;
+    }
+    .game-box{
+        width: 50%;
+    }
+    .word-display{
+        margin-top: 20px;
+        margin-right: 40px;
+        margin-left: 10px;
+        width: 70%;
+    }
+    .word-input{
+        font-size: 40px;
+        height: 70px;
+    }
+/* _______________________Contact________________________*/
+
+    .contact-form{
+        width: 60%;
+    }
+    label{
+        text-align: center;
+        width: 100%;
+    }
+    #submit-email{
+        margin-top: 20px;
+    }
+}
