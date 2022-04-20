@@ -11,9 +11,3 @@ function restart() {
 }
 
 module.exports = {restart}
-
-// function buttonClick() {
-//     document.getElementById("par").innerHTML = "You Clicked";
-// }
-
-// module.exports = {restart, buttonClick}

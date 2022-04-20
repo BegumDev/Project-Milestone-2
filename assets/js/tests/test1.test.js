@@ -3,6 +3,7 @@
  */
 
 
+
 const {restart} = require("../script3")
 
 beforeAll(() => {
@@ -14,17 +15,11 @@ beforeAll(() => {
 });
 
 describe("DOM tests", () => {
+  test("score should exist", () => {
+    expect(document.getElementById("score").innerHTML).toEqual("Score: 0");
+  });
     // test("h1 should exist", () => {
     //   expect(document.getElementsByTagName("h1").length).toBe(1);
-    // });
-    test("score should exist", () => {
-      expect(document.getElementById("score").innerHTML).toEqual("Score: 0");
-    });
-    
-    // test("Expects content to change", () => {
-    //     buttonClick();
-    //     expect(document.getElementById("par")
-    //         .innerHTML).toEqual("You Clicked");
     // });
     // test("should add", () => {
     //   expect(1 + 2).toBe(3);

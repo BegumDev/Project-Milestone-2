@@ -14,8 +14,7 @@ const showInstruction = document.querySelector('.help-btn')
 const restartBtn = document.querySelector('.restart-btn')
 const introDisplay = document.querySelector('.introBtn')
 const modalDisplay = document.querySelector('.modal-container')
-
-
+const highScores = document.querySelector('highscore')
 
 // Event listeners
 closeInstruction.addEventListener('click', closeInstructions)
@@ -105,6 +104,7 @@ function startGame() {
         }
     })
 }
+
 // Countdown timer
 function countdown() {
     gameInterval = setInterval(() => {
@@ -114,6 +114,7 @@ function countdown() {
         } else if (timer === 0) {
             clearInterval(gameInterval)
             gameMessage.innerHTML = 'Game Over!';
+            gameMessage.style.backgroundColor = '#3DBE98'
             score = -1;
             isPlaying = false;
             console.log('off') // Keep this here to check timer is still working
@@ -121,19 +122,6 @@ function countdown() {
         timeDisplay.innerHTML = timer;
     }, 1000)
 }
-// function countdown() {
-//     if (timer > 0) {
-//         timer--;
-//     } else if (timer === 0) {
-//         console.log('test')
-//         gameMessage.innerHTML = 'Game Over!';
-//         score = -1;
-//         isPlaying = false;
-//     }
-//     timeDisplay.innerHTML = timer;
-// }
-
-
 // Check if its a match
 function checkMatch() {
     if (wordInput.value === wordDisplay.innerHTML) {
@@ -181,5 +169,3 @@ function restart() {
     scoreDisplay.innerHTML = `Score: 0`;
     score = 0;
 }
-
-// module.exports = {restart}
