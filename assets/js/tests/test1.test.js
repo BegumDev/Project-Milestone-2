@@ -31,7 +31,3 @@ describe("DOM tests", () => {
     // });
 });
 
-
-// cross reference class conversion to id
-// organise test files
-//
