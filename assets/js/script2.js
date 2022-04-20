@@ -8,7 +8,7 @@ const timeDisplay = document.querySelector('.timer')
 const wordDisplay = document.querySelector('.word-display')
 const wordInput = document.querySelector('.word-input')
 const gameMessage = document.querySelector('.message')
-const scoreDisplay = document.querySelector('.score')
+const scoreDisplay = document.querySelector('#score')
 const closeInstruction = document.querySelector('.close')
 const showInstruction = document.querySelector('.help-btn')
 const restartBtn = document.querySelector('.restart-btn')
@@ -182,4 +182,4 @@ function restart() {
     score = 0;
 }
 
-module.exports = restart
+// module.exports = {restart}
