@@ -104,7 +104,6 @@ function startGame() {
         }
     })
 }
-
 // Countdown timer
 function countdown() {
     gameInterval = setInterval(() => {
@@ -114,7 +113,6 @@ function countdown() {
         } else if (timer === 0) {
             clearInterval(gameInterval)
             gameMessage.innerHTML = 'Game Over!';
-            gameMessage.style.backgroundColor = '#3DBE98'
             score = -1;
             isPlaying = false;
             console.log('off') // Keep this here to check timer is still working
