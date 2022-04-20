@@ -181,3 +181,5 @@ function restart() {
     scoreDisplay.innerHTML = `Score: 0`;
     score = 0;
 }
+
+module.exports = restart
