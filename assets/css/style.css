@@ -405,7 +405,7 @@ footer a {
 }
 
 /*---------------------------Homepage-------------------*/
-@media screen and (min-width: 1025px) and (max-width:1440px) {
+@media screen and (min-width: 1025px) and (max-width:1498px) {
 
     .help-btn {
         font-size: 30px;
@@ -444,7 +444,7 @@ footer a {
     }
 }
 
-@media screen and (min-width: 1950px) and (max-width:2000px) {
+@media screen and (min-width: 1499px) and (max-width:2560px) {
 
     .help-btn {
         font-size: 30px;
