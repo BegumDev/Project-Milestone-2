@@ -112,6 +112,7 @@ function countdown() {
             clearInterval(gameInterval)
             gameMessage.innerHTML = 'Time is up!';
             wordInput.classList.add('hide');
+            scoreDisplay.innerHTML = `You scored: ${score}!`;
             score = -1;
             isPlaying = false;
             console.log('off') // Keep this here to check timer is still working
@@ -157,6 +158,7 @@ function closeInstructions() {
 // Restart the game on click
 function restart() {
     wordInput.classList.remove('hide');
+    score = -1;
     timer = 6
     clearInterval(gameInterval)
     countdown()
