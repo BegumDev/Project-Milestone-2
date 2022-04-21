@@ -14,7 +14,7 @@ const showInstruction = document.querySelector('.help-btn')
 const restartBtn = document.querySelector('.restart-btn')
 const introDisplay = document.querySelector('.introBtn')
 const modalDisplay = document.querySelector('.modal-container')
-const highScores = document.querySelector('highscore')
+
 
 // Event listeners
 closeInstruction.addEventListener('click', closeInstructions)
@@ -93,6 +93,7 @@ function startGame() {
             timer = 6;
             wordInput.value = '';
             showWords()
+            // Call back the countdown function
             score++;
         }
         scoreDisplay.innerHTML = `Score: ${score}`;
@@ -112,7 +113,7 @@ function countdown() {
             console.log('on') // Keep this here to check timer is still working
         } else if (timer === 0) {
             clearInterval(gameInterval)
-            gameMessage.innerHTML = 'Game Over!';
+            gameMessage.innerHTML = 'Time is up!';
             score = -1;
             isPlaying = false;
             console.log('off') // Keep this here to check timer is still working
