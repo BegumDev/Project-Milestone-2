@@ -15,12 +15,10 @@ const restartBtn = document.querySelector('.restart-btn')
 const introDisplay = document.querySelector('.introBtn')
 const modalDisplay = document.querySelector('.modal-container')
 
-
 // Event listeners
 closeInstruction.addEventListener('click', closeInstructions)
 showInstruction.addEventListener('click', showInstructions)
 restartBtn.addEventListener('click', restart)
-
 
 // Add global variables
 let timer = 6;
@@ -93,11 +91,10 @@ function startGame() {
             timer = 6;
             wordInput.value = '';
             showWords()
-            // Call back the countdown function
             score++;
         }
         scoreDisplay.innerHTML = `Score: ${score}`;
-
+        
         if (score === -1) {
             scoreDisplay.innerHTML = `Score: 0`;
         } else {
@@ -114,6 +111,7 @@ function countdown() {
         } else if (timer === 0) {
             clearInterval(gameInterval)
             gameMessage.innerHTML = 'Time is up!';
+            wordInput.classList.add('hide');
             score = -1;
             isPlaying = false;
             console.log('off') // Keep this here to check timer is still working
@@ -158,6 +156,7 @@ function closeInstructions() {
 }
 // Restart the game on click
 function restart() {
+    wordInput.classList.remove('hide');
     timer = 6
     clearInterval(gameInterval)
     countdown()
