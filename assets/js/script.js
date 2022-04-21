@@ -26,8 +26,38 @@ let score = 0;
 let isPlaying;
 
 // Word list
-const wordArray = [// On load, initialise the game
-document.addEventListener('DOMContentLoaded', intro);
+const wordArray = [
+    'Imagine',
+    'Build',
+    'Develop',
+    'Produce',
+    'Explain',
+    'Construct',
+    'Create',
+    'Innovate',
+    'Succeed',
+    'Prepare',
+    'Adjust',
+    'Understand',
+    'Play',
+    'Excel',
+    'Enjoy',
+    'Relax',
+    'Assemble',
+    'Code',
+    'Logic',
+    'Technical',
+    'Spectacular',
+    'Arrange',
+    'Discover',
+    'Reality',
+    'Explore',
+    'Value',
+    'Platform',
+    'Educate',
+    'Podium',
+    'Win',
+]
 
 //===================================================================================
 // Trigger the modal with user control of starting the game
