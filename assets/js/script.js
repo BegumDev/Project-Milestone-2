@@ -130,7 +130,6 @@ function checkMatch() {
         return false;
     }
 }
-//===================================================================================
 // Show instructions when help button is clicked
 function showInstructions() {
     let help = document.querySelector('.instructions');

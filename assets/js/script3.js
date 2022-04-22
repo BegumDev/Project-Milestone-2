@@ -1,13 +1,36 @@
-function restart() {
-    timer = 6
-    clearInterval(gameInterval)
-    countdown()
-    showWords();
-    wordInput.focus()
-    gameMessage.innerHTML = "";
-    wordInput.value = '';
-    scoreDisplay.innerHTML = `Score: 0`;
-    score = 0;
-}
+// Word list
+const wordArray = [
+    'Imagine',
+    'Build',
+    'Develop',
+    'Produce',
+    'Explain',
+    'Construct',
+    'Create',
+    'Innovate',
+    'Succeed',
+    'Prepare',
+    'Adjust',
+    'Understand',
+    'Play',
+    'Excel',
+    'Enjoy',
+    'Relax',
+    'Assemble',
+    'Code',
+    'Logic',
+    'Technical',
+    'Spectacular',
+    'Arrange',
+    'Discover',
+    'Reality',
+    'Explore',
+    'Value',
+    'Platform',
+    'Educate',
+    'Podium',
+    'Win',
+]
 
-module.exports = {restart}
+
+module.exports = {wordArray}
