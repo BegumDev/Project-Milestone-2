@@ -1,6 +1,6 @@
 <h1 align="center">Type It Fast</h1>
 
-[View the live site here UPLOAD DEPLOYED SITE](https://github.com/BegumDev/Type-It-Fast.git)
+[View the live site here](https://begumdev.github.io/Type-It-Fast/)
 
 ## User Experience (UX)
 ***
@@ -18,10 +18,13 @@
     - #### Typography
         - The fonts used were taken from Google fonts named 'Mukta' with a fall back of Sans-Serif.
 - ### Wireframes
-    * Homepage
-        - [View homepage here](assets/Images/homepage-wireframe.png)
-    * Contact Page
-        - [View contact page here](assets/Images/contact-page-wireframe.png)
+    <details><summary>Homepage</summary>
+    ![View homepage here](assets/Images/homepage-wireframe.png)
+    </details>
+
+    <details><summary>Contact Page</summary>
+    ![View contact page here](assets/Images/contact-page-wireframe.png)
+    </details>
 
 ## Features
 ***
@@ -39,8 +42,6 @@
     - Prompt messages are displayed throughout to motivate the user once an answer matches or if the time has run out and its game-over.
 - ### Score display.
     - The score is displayed clearly and will increment upon correct answers to keep the user informed of their progress throughout.
-- ### Testimonials COME BACK TO THIS.
-    - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 - ### Footer links to social media pages opened externally.
     - The minimalistic footer is designed place focus on social media connections with fully navigating links to the external sites. Once hovered over the icons, the mouse icon changes showing a clickable hand.
 - ### A guided contact form fully integrated with an email service.
@@ -58,16 +59,28 @@
     * jQuery
     * Google Maps API
     * Email.js
-    * 
+    * Jest
     * 
 
 ## Testing
 ***
 
 * ### Testing user stories from user experience (UX).
-    1. I want to be able to find help if I dont understand the game without much distraction.
+    1. I want to be able to find help in how to play the game without much distraction.
+        * On loading the start up page, the user is met with a modal consuming the page.
+        * On this modal the user is given clear instructions as to how to play the game.
+        * Click on the start button and the game will begin.
+        * If the user is still unsure, the user can click on the 'how to play' button which will show the instructions once again with a closing button to hide away again.
     2. I want to be able to type in my answers and immediately see how it impacts my score.
+        * As soon as the game starts, the word input box has a auto focus ready for them to type.
+        * Every time the user starts typing, a game message will pop up with 'typing' as their status. If the answer is correct, the message will display "Well done!"
+        * If the answer is correct, the score will increment updating them in real time.
     3. I want to be able to contact the organisation with easy navigation.
+        * A contact tab is placed in the header menu.
+        * Click on this link and it will take you to our contact form.
+        * Each input field has a label describing what is to go in aswell as placeholder text.
+        * All input fields are required to have text put in otherwise the form will not send.
+        * Once all fields are complete, click the submit button which fires off an email with an 'alert' response to the user letting them know we will be in touch shortly.
 
 * ### Code Validation.
     - W3C HTML Validation.
@@ -84,8 +97,14 @@
     - Laptops
 
 * ### Known bugs.
+    - 
+    - 
+    - 
 
 * ### Fixed bugs.
+    - 
+    - 
+    - 
 
 ## Deployment
 ***
