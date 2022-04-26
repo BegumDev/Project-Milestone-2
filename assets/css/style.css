@@ -491,6 +491,11 @@ footer a {
         width: 250px;
     }
 
+    .next-level{
+        font-size: 30px;
+        width: 250px;
+    }
+
     /*=====================================================*/
     .contact-form {
         width: 40%;

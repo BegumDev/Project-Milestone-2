@@ -14,18 +14,18 @@ const showInstruction = document.querySelector('.help-btn');
 const restartBtn = document.querySelector('.restart-btn');
 const introDisplay = document.querySelector('.introBtn');
 const modalDisplay = document.querySelector('.modal-container');
+// const nextLevelBtn = document.querySelector('.next-level')
 
 // Event listeners
 closeInstruction.addEventListener('click', closeInstructions);
 showInstruction.addEventListener('click', showInstructions);
 restartBtn.addEventListener('click', restart);
+// nextLevelBtn.addEventListener('click', nextLevel)
 
 // Add global variables
 let timer = 6;
 let score = 0;
-let isPlaying;
 
-// Word list
 const wordArray = [
     'Imagine',
     'Build',
@@ -68,13 +68,6 @@ function intro() {
         startGame();
     });
 }
-//Display the words
-function showWords() {
-    // Generate a random word
-    const randomWord = Math.floor(Math.random() * wordArray.length);
-    // Display the random word    
-    wordDisplay.innerHTML = wordArray[randomWord];
-}
 // Start the game
 function startGame() {
     // Display the words
@@ -84,23 +77,38 @@ function startGame() {
     // Start the timer
     countdown();
     // Check the users input against the word displayed
-    wordInput.addEventListener('input', function () {
+    wordInput.addEventListener('input', checkMatch);
+}
+//Display the words
+function showWords() {
+    let counter = 0;
 
-        if (checkMatch()) {
-            isPlaying = true;
-            timer = 6;
-            wordInput.value = '';
-            showWords();
-            score++;
+    for(let i = 0; i < wordArray.length; i++) {
+        if(wordInput.value === wordDisplay.innerHTML) {
+            wordArray.shift();
+            console.log(wordArray[counter]) // Take this out later
         }
-        scoreDisplay.innerHTML = `Score: ${score}`;
-        
-        if (score === -1) {
-            scoreDisplay.innerHTML = `Score: 0`;
-        } else {
-            scoreDisplay.innerHTML = `Score: ${score}`;
-        }
-    });
+        wordDisplay.innerHTML = wordArray[counter];
+    }
+}
+// Check if its a match
+function checkMatch() {
+    if(wordInput.value === wordDisplay.innerHTML) {
+        score++;
+        showWords();
+        wordInput.value = '';
+        timer = 6;
+    }
+    scoreDisplay.innerHTML = `Score: ${score}`;
+    // First way to stop the game
+    if(score === 3){
+        clearInterval(gameInterval);
+        timeDisplay.innerHTML = '';
+        gameMessage.innerHTML = 'Level cleared!'
+        wordDisplay.classList.add('hide');
+        wordInput.classList.add('hide');
+        // Put a next level button here
+    }
 }
 // Countdown timer
 function countdown() {
@@ -109,26 +117,15 @@ function countdown() {
             timer--;
             console.log('on'); // Keep this here to check timer is still working
         } else if (timer === 0) {
+            // Second way to stop the game
             clearInterval(gameInterval);
             gameMessage.innerHTML = 'Time is up!';
             wordInput.classList.add('hide');
             scoreDisplay.innerHTML = `You scored: ${score}!`;
-            score = -1;
-            isPlaying = false;
             console.log('off'); // Keep this here to check timer is still working
         }
         timeDisplay.innerHTML = timer;
     }, 1000);
-}
-// Check if its a match
-function checkMatch() {
-    if (wordInput.value === wordDisplay.innerHTML) {
-        gameMessage.innerHTML = 'Well done!';
-        return true;
-    } else {
-        gameMessage.innerHTML = 'Typing...';
-        return false;
-    }
 }
 // Show instructions when help button is clicked
 function showInstructions() {
