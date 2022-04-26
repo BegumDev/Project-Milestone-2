@@ -14,13 +14,13 @@ const showInstruction = document.querySelector('.help-btn');
 const restartBtn = document.querySelector('.restart-btn');
 const introDisplay = document.querySelector('.introBtn');
 const modalDisplay = document.querySelector('.modal-container');
-// const nextLevelBtn = document.querySelector('.next-level')
+const nextLevelBtn = document.querySelector('.next-level')
 
 // Event listeners
 closeInstruction.addEventListener('click', closeInstructions);
 showInstruction.addEventListener('click', showInstructions);
 restartBtn.addEventListener('click', restart);
-// nextLevelBtn.addEventListener('click', nextLevel)
+nextLevelBtn.addEventListener('click', nextLevel)
 
 // Add global variables
 let timer = 6;
@@ -59,6 +59,24 @@ const wordArray = [
     'Win',
 ]
 
+const wordArrayL2 = [
+        'Amaze',
+        'Discover',
+        'Repeat',
+        'Create',
+        'Innovate',
+        'Succeed',
+        'Prepare',
+        'Adjust',
+        'Understand',
+        'Play',
+        'Excel',
+        'Enjoy',
+        'Relax',
+        'Assemble',
+        'Code',
+]
+
 //===================================================================================
 // Trigger the modal with user control of starting the game
 function intro() {
@@ -79,7 +97,7 @@ function startGame() {
     // Check the users input against the word displayed
     wordInput.addEventListener('input', checkMatch);
 }
-//Display the words
+//Display the L1 words in order
 function showWords() {
     let counter = 0;
 
@@ -91,7 +109,15 @@ function showWords() {
         wordDisplay.innerHTML = wordArray[counter];
     }
 }
-// Check if its a match
+// Display the L2 words at random
+function showWordsL2() {
+    // Generate a random word
+    const randomWord = Math.floor(Math.random() * wordArrayL2.length);
+    // Display the random word    
+    wordDisplay.innerHTML = wordArrayL2[randomWord];
+    console.log(wordArrayL2[randomWord]);
+}
+// Check if its a match on L1
 function checkMatch() {
     if(wordInput.value === wordDisplay.innerHTML) {
         score++;
@@ -108,6 +134,24 @@ function checkMatch() {
         wordDisplay.classList.add('hide');
         wordInput.classList.add('hide');
         // Put a next level button here
+    }
+}
+// Check if its a match on L2
+function checkMatch2() {
+    if(wordInput.value === wordDisplay.innerHTML) {
+        score++;
+        showWordsL2();
+        wordInput.value = '';
+        timer = 4;
+    }
+    scoreDisplay.innerHTML = `Score: ${score}`;
+    // First way to stop the game
+    if(score === 5) {
+        clearInterval(gameInterval);
+        timeDisplay.innerHTML = '';
+        gameMessage.innerHTML = 'Level cleared!'
+        wordDisplay.classList.add('hide');
+        wordInput.classList.add('hide');
     }
 }
 // Countdown timer
@@ -151,7 +195,7 @@ function closeInstructions() {
         helpBtn.style.display = 'block';
     }
 }
-// Restart the game on click
+// Restart the game on click - COME BACK TO THIS TO INCORPORATE THE WORDS DISPLAY IN ORDER
 function restart() {
     wordInput.classList.remove('hide');
     score = -1;
@@ -164,4 +208,17 @@ function restart() {
     wordInput.value = '';
     scoreDisplay.innerHTML = `Score: 0`;
     score = 0;
+}
+// Next level
+function nextLevel(){
+    clearInterval(gameInterval);
+    showWordsL2();
+    countdown();
+    timer = 4;
+    wordDisplay.classList.remove('hide');
+    wordInput.classList.remove('hide');
+    wordInput.focus();
+    wordInput.value = '';
+    wordInput.removeEventListener('input', checkMatch);
+    wordInput.addEventListener('input', checkMatch2);
 }
