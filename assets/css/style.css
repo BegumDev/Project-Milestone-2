@@ -130,6 +130,14 @@ h2 h3 {
     margin: 0 auto;
     text-transform: uppercase;
 }
+.next-level{
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    width: 220px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: 24px;
+}
 
 .game-box {
     width: 80%;
@@ -487,11 +495,6 @@ footer a {
     }
 
     .restart-btn {
-        font-size: 30px;
-        width: 250px;
-    }
-
-    .next-level{
         font-size: 30px;
         width: 250px;
     }

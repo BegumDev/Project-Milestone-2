@@ -146,7 +146,7 @@ function checkMatch2() {
     }
     scoreDisplay.innerHTML = `Score: ${score}`;
     // First way to stop the game
-    if(score === 5) {
+    if(score === 8) {
         clearInterval(gameInterval);
         timeDisplay.innerHTML = '';
         gameMessage.innerHTML = 'Level cleared!'
@@ -195,26 +195,30 @@ function closeInstructions() {
         helpBtn.style.display = 'block';
     }
 }
-// Restart the game on click - COME BACK TO THIS TO INCORPORATE THE WORDS DISPLAY IN ORDER
+// Restart the L1 game on click - COME BACK TO THIS TO INCORPORATE THE WORDS DISPLAY IN ORDER - REM MAYBE RESET SCORE
 function restart() {
-    wordInput.classList.remove('hide');
-    score = -1;
-    timer = 6;
     clearInterval(gameInterval);
-    countdown();
+    wordInput.classList.remove('hide');
+    wordInput.removeEventListener('input', checkMatch2); // Removes the L2 game with 3 sec timer and replaces it with...
+    wordInput.addEventListener('input', checkMatch); // this L1 game with 5 sec timer
+    wordDisplay.classList.remove('hide');
+    score = 0;
+    scoreDisplay.innerHTML = `Score: 0`;
     showWords();
+    timer = 6;
+    countdown();
     wordInput.focus();
     gameMessage.innerHTML = "";
     wordInput.value = '';
-    scoreDisplay.innerHTML = `Score: 0`;
-    score = 0;
 }
-// Next level
+// Next level FIX WHEN YOU GET SCORE TO MAX CANNOT USE NEXT LEVEL AGAIN
 function nextLevel(){
     clearInterval(gameInterval);
+    scoreDisplay.innerHTML = `Score: 0`;
+    score = 0;
+    timer = 4;
     showWordsL2();
     countdown();
-    timer = 4;
     wordDisplay.classList.remove('hide');
     wordInput.classList.remove('hide');
     wordInput.focus();
