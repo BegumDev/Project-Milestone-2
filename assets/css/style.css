@@ -6,8 +6,8 @@
 }
 
 /* 
-/* Index.html page */
-/*==================================================================*/
+/* ==============================Index.html page==================== */
+
 /*_________________________________Header Styling____________________*/
 .logo {
     border: 4px solid #3DA4BE;
@@ -23,13 +23,14 @@
 
 .logo a {
     text-decoration: none;
-    color: #861111;
+    color: #ffffff;
 }
 
 .menu {
     height: 100px;
     text-align: center;
-    border: 4px solid red;
+    border: 4px solid #3DBE98;
+    background: linear-gradient(45deg, #573DBE, #3DBE98);
 }
 
 .menu li {
@@ -41,7 +42,9 @@
 
 .menu a {
     text-decoration: none;
-    color: #0e0202;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 
@@ -69,11 +72,12 @@
 }
 
 .modal-msg,
-h2, h3 {
+h2,
+h3 {
     color: #ffffff;
 }
-.modal-msg
-h2{
+
+.modal-msg h2 {
     text-transform: uppercase;
 }
 
@@ -141,7 +145,8 @@ h2{
     text-transform: uppercase;
     background: linear-gradient(45deg, #3DBE57, #573DBE);
 }
-.next-level{
+
+.next-level {
     color: #ffffff;
     border: 2px solid #ffffff;
     border-radius: 30px;
@@ -221,7 +226,7 @@ h2{
     font-size: 30px;
 }
 
-/* Contact page */
+/* =====================================Contact page ============== */
 /*==================================================================*/
 
 .contact-msg {
@@ -262,9 +267,10 @@ label {
     border-radius: 10px;
     padding: 5px;
     margin: 0 auto;
-    width: 200px;
+    width: 220px;
 }
-.text-area{
+
+.text-area {
     width: 90%;
     border-radius: 20px;
     padding: 10px;
@@ -279,7 +285,8 @@ label {
     text-transform: uppercase;
 }
 
-.map-msg{
+.map-msg {
+    color: #000000;
     text-align: center;
     width: 70%;
     border: 4px solid #573DBE;
@@ -315,61 +322,42 @@ footer a {
 }
 
 
-/*********************************************/
+/*********************************************************************/
 
 /*___________________________________________________MEDIA QUERIES_______________*/
 
-@media screen and (min-width:300px) and (max-width: 768px) {
-    /* _______________________Homepage________________________*/
-    .introBtn{
-        font-size: 25px;
-        width: 180px;
+@media screen and (min-width:426px) and (max-width:768px) {
+    
+     /*---------------------------Homepage-------------------*/
+    .game-box {
+        height: 600px;
     }
-    .help-btn {
-        font-size: 30px;
-        width: 220px;
-    }
-    .word-input {
-        height: 70px;
-        width: 85%;
-        font-size: 30px;
+    .time-box {
+        margin-left: 60px;
     }
 
-    .message {
-        font-size: 35px;
+    .word-display {
+        margin-top: 35px;
+        margin-right: 40px;
+        width: 60%;
     }
-
-    #score {
-        margin-bottom: 40px;
-    }
-
-    /* _______________________Contact________________________*/
+    /*---------------------------Contact Page-------------------*/
     .contact-form {
-        height: 900px;
+        text-align: center;
     }
-
-    label {
-        font-size: 30px;
+    .name, .email {
+        width: 90%;
     }
-
-    input {
-        font-size: 30px;
+    .message{
+        width: 100%;
     }
-
-    .text-area {
-        width: 300px;
-        height: 400px;
-    }
-
-    #submit-email {
+    #submit-email{
         margin-top: 20px;
     }
-
-    #map {
-        height: 350px;
-        width: 450px;
+    #map{
+        height: 300px;
+        width: 400px;
     }
-
 }
 
 /*===========================================================*/
@@ -377,6 +365,7 @@ footer a {
 @media screen and (min-width:769px) and (max-width:1024px) {
 
     /*---------------------------Homepage-------------------*/
+
     .help-btn {
         font-size: 30px;
         width: 250px;
@@ -407,9 +396,16 @@ footer a {
         text-align: center;
         width: 100%;
     }
+    .name, .email {
+        width: 90%;
+    }
 
     #submit-email {
         margin-top: 20px;
+    }
+    #map{
+        height: 500px;
+        width: 600px;
     }
 }
 
@@ -420,13 +416,17 @@ footer a {
         font-size: 30px;
         width: 240px;
     }
-
-    .game-box {
+    .instructions{
         width: 50%;
     }
 
+    .game-box {
+        width: 50%;
+        height: 500px;
+    }
+
     .word-display {
-        margin-top: 20px;
+        margin-top: 35px;
         margin-right: 40px;
         margin-left: 10px;
         width: 70%;
@@ -435,12 +435,18 @@ footer a {
     .word-input {
         font-size: 40px;
         height: 70px;
+        width: 90%;
     }
 
     /* _______________________Contact________________________*/
-
+    .contact-msg{
+        width: 60%;
+    }
     .contact-form {
         width: 60%;
+    }
+    .name, .email {
+        width: 90%;
     }
 
     label {
@@ -451,13 +457,24 @@ footer a {
     #submit-email {
         margin-top: 20px;
     }
+    .map-msg {
+        width: 60%;
+    }
+    #map{
+        height: 600px;
+        width: 700px;
+    }
 }
+/*---------------------------Homepage-------------------*/
 
 @media screen and (min-width: 1499px) and (max-width:2560px) {
 
     .help-btn {
         font-size: 30px;
         width: 260px;
+    }
+    .instructions{
+        width: 40%;
     }
 
     .game-box {
@@ -467,17 +484,19 @@ footer a {
 
     .word-display {
         margin-top: 40px;
-        font-size: 50px;
+        margin-right: 40px;
+        font-size: 40px;
+        width: 70%;
     }
 
     .time-box {
-        height: 110px;
-        width: 110px;
-        font-size: 30px;
+        height: 100px;
+        width: 100px;
+        font-size: 25px;
     }
 
     .timer {
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .word-input {
@@ -498,12 +517,26 @@ footer a {
         width: 250px;
     }
 
-    /*=====================================================*/
-    .contact-form {
+     /* _______________________Contact________________________*/
+    
+     .contact-msg{
+         width: 60%;
+     }
+     .contact-form {
         width: 40%;
     }
 
     label {
         width: 100%;
+    }
+    .name, .email {
+        width: 90%;
+    }
+    .map-msg{
+        width: 60%;
+    }
+    #map{
+        height: 400px;
+        width: 600px;
     }
 }

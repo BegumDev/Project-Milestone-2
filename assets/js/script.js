@@ -1,5 +1,5 @@
 // On load, initialise the game
-document.addEventListener('DOMContentLoaded', intro);
+document.addEventListener('DOMContentLoaded', startGame);
 
 //===================================================================================
 
