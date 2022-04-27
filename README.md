@@ -97,7 +97,7 @@
     - Laptops
 
 * ### Known bugs.
-    - 
+    - On retarting the game, the word list has not repeated the loop thus only displaying whats left of the array.
     - 
     - 
 
@@ -109,12 +109,34 @@
 ## Deployment
 ***
 - ### Create the initial reposotory
+    * Once you sign into Github, click on 'new' on the left side of the page.
+    * Add a template if needed and a repository name with an optional description.
+    * Click 'create' repository.
+    * Once created - click on the green 'Gitpod' button which will open your workspace. (Note that you only need to access the workspace using Github for first time).
 - ### Gitpod
+    * 
+    * 
+    * 
 - ### Guthub Pages
+    * 
+    * 
+    * 
 
 ## Credits
 ***
  - ### Code
+    * 
+    * 
+    * 
  - ### Content
+    * 
+    * 
+    * 
  - ### Media
+    * 
+    * 
+    * 
  - ### Acknowledgements
+    * 
+    * 
+    * 
