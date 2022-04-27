@@ -1,5 +1,5 @@
 // On load, initialise the game
-document.addEventListener('DOMContentLoaded', intro);
+document.addEventListener('DOMContentLoaded', startGame);
 
 //===================================================================================
 
@@ -26,39 +26,40 @@ nextLevelBtn.addEventListener('click', nextLevel)
 let timer = 6;
 let score = 0;
 
+// Word list for the 1st level
 const wordArray = [
-    'Imagine',
-    'Build',
-    'Develop',
-    'Produce',
-    'Explain',
-    'Construct',
-    'Create',
-    'Innovate',
-    'Succeed',
-    'Prepare',
-    'Adjust',
     'Understand',
-    'Play',
-    'Excel',
-    'Enjoy',
-    'Relax',
-    'Assemble',
-    'Code',
-    'Logic',
     'Technical',
     'Spectacular',
-    'Arrange',
-    'Discover',
-    'Reality',
-    'Explore',
-    'Value',
-    'Platform',
-    'Educate',
-    'Podium',
-    'Win',
+    // 'Imagine',
+    // 'Build',
+    // 'Develop',
+    // 'Produce',
+    // 'Explain',
+    // 'Construct',
+    // 'Create',
+    // 'Innovate',
+    // 'Succeed',
+    // 'Prepare',
+    // 'Adjust',
+    // 'Play',
+    // 'Excel',
+    // 'Enjoy',
+    // 'Relax',
+    // 'Assemble',
+    // 'Code',
+    // 'Logic',
+    // 'Arrange',
+    // 'Discover',
+    // 'Reality',
+    // 'Explore',
+    // 'Value',
+    // 'Platform',
+    // 'Educate',
+    // 'Podium',
+    // 'Win',
 ]
-
+// Word list for the 2nd level
 const wordArrayL2 = [
         'Amaze',
         'Discover',
@@ -195,7 +196,7 @@ function closeInstructions() {
         helpBtn.style.display = 'block';
     }
 }
-// Restart the L1 game on click - COME BACK TO THIS TO INCORPORATE THE WORDS DISPLAY IN ORDER - REM MAYBE RESET SCORE
+// Restart the L1 game on click -COME BACK TO THIS, IT ONLY USES THE REMAINING WORDS IN WORD LIST 1 LOOP
 function restart() {
     clearInterval(gameInterval);
     wordInput.classList.remove('hide');
@@ -211,7 +212,7 @@ function restart() {
     gameMessage.innerHTML = "";
     wordInput.value = '';
 }
-// Next level FIX WHEN YOU GET SCORE TO MAX CANNOT USE NEXT LEVEL AGAIN
+// Next level game with 3 seconds
 function nextLevel(){
     clearInterval(gameInterval);
     scoreDisplay.innerHTML = `Score: 0`;
