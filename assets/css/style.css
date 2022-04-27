@@ -14,7 +14,10 @@
     background-color: #3DBE98;
     width: 100%;
 }
-
+.fa-hands {
+    color: #573DBE;
+    margin-left: 10px;
+}
 .logo h1 {
     text-align: center;
     padding: 20px;
@@ -49,6 +52,7 @@
 
 
 /*_________________________________Game Area Styling____________________*/
+
 .modal-container {
     background-color: rgba(61, 164, 190, 0.4);
     position: fixed;
