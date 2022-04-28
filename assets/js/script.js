@@ -15,6 +15,11 @@ const restartBtn = document.querySelector('.restart-btn');
 const introDisplay = document.querySelector('.introBtn');
 const modalDisplay = document.querySelector('.modal-container');
 
+// Event listeners
+closeInstruction.addEventListener('click', closeInstructions);
+showInstruction.addEventListener('click', showInstructions);
+restartBtn.addEventListener('click', restart);
+
 // Add global variables
 let timer = 6;
 let score = 0;
@@ -53,13 +58,6 @@ const wordArray = [
     'Win',
 ]
 //===================================================================================
-
-function EventListener() {
-        // Event listeners
-        closeInstruction.addEventListener('click', closeInstructions);
-        showInstruction.addEventListener('click', showInstructions);
-        restartBtn.addEventListener('click', restart);
-}
 
 // Trigger the modal with user control of starting the game
 function initialise() {
