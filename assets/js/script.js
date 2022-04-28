@@ -53,12 +53,16 @@ const wordArray = [
     'Win',
 ]
 //===================================================================================
+
+function EventListener() {
+        // Event listeners
+        closeInstruction.addEventListener('click', closeInstructions);
+        showInstruction.addEventListener('click', showInstructions);
+        restartBtn.addEventListener('click', restart);
+}
+
 // Trigger the modal with user control of starting the game
 function initialise() {
-    // Event listeners
-    closeInstruction.addEventListener('click', closeInstructions);
-    showInstruction.addEventListener('click', showInstructions);
-    restartBtn.addEventListener('click', restart);
     // Listen out for the click, once clicked hide the modal and start the game
     introDisplay.addEventListener('click', () => {
         modalDisplay.classList.add('hide');
@@ -67,10 +71,6 @@ function initialise() {
 }
 // Start the game
 function startGame() {
-    // Event listeners
-    closeInstruction.addEventListener('click', closeInstructions);
-    showInstruction.addEventListener('click', showInstructions);
-    restartBtn.addEventListener('click', restart);
     // Display the words
     showWords();
     // Focus on the input box
@@ -161,3 +161,5 @@ function restart() {
     gameMessage.innerHTML = "";
     wordInput.value = '';
 }
+
+module.exports = wordArray

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const {wordArray} = require("../script3")
+let wordArray;
 
 beforeAll(() => {
 	let fs = require("fs");
@@ -10,6 +10,8 @@ beforeAll(() => {
 	document.open();
 	document.write(fileContents);
 	document.close();
+	
+	wordArray = require("../script.js");
 });
 
 // This test brings in from the DOM regardless of importing in modules
@@ -22,7 +24,8 @@ describe("DOM elements exist", () => {
 // This test checks the number of words in my word list
 describe("How many words there are in the words list", () => {
   test("wordArray should include 30 words", () => {
-    expect(wordArray).toHaveLength(30);
+    // expect(wordArray).toHaveLength(30);
+	expect(wordArray).toHaveLength(30);
   });
 });
 
