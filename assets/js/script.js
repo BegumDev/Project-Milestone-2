@@ -1,5 +1,5 @@
 // On load, initialise the game
-document.addEventListener('DOMContentLoaded', intro);
+document.addEventListener('DOMContentLoaded', initialise);
 
 //===================================================================================
 
@@ -14,11 +14,6 @@ const showInstruction = document.querySelector('.help-btn');
 const restartBtn = document.querySelector('.restart-btn');
 const introDisplay = document.querySelector('.introBtn');
 const modalDisplay = document.querySelector('.modal-container');
-
-// Event listeners
-closeInstruction.addEventListener('click', closeInstructions);
-showInstruction.addEventListener('click', showInstructions);
-restartBtn.addEventListener('click', restart);
 
 // Add global variables
 let timer = 6;
@@ -59,7 +54,11 @@ const wordArray = [
 ]
 //===================================================================================
 // Trigger the modal with user control of starting the game
-function intro() {
+function initialise() {
+    // Event listeners
+    closeInstruction.addEventListener('click', closeInstructions);
+    showInstruction.addEventListener('click', showInstructions);
+    restartBtn.addEventListener('click', restart);
     // Listen out for the click, once clicked hide the modal and start the game
     introDisplay.addEventListener('click', () => {
         modalDisplay.classList.add('hide');
@@ -68,6 +67,10 @@ function intro() {
 }
 // Start the game
 function startGame() {
+    // Event listeners
+    closeInstruction.addEventListener('click', closeInstructions);
+    showInstruction.addEventListener('click', showInstructions);
+    restartBtn.addEventListener('click', restart);
     // Display the words
     showWords();
     // Focus on the input box
