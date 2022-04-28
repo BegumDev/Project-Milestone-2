@@ -14,13 +14,11 @@ const showInstruction = document.querySelector('.help-btn');
 const restartBtn = document.querySelector('.restart-btn');
 const introDisplay = document.querySelector('.introBtn');
 const modalDisplay = document.querySelector('.modal-container');
-const nextLevelBtn = document.querySelector('.next-level')
 
 // Event listeners
 closeInstruction.addEventListener('click', closeInstructions);
 showInstruction.addEventListener('click', showInstructions);
 restartBtn.addEventListener('click', restart);
-nextLevelBtn.addEventListener('click', nextLevel)
 
 // Add global variables
 let timer = 6;
@@ -59,25 +57,6 @@ const wordArray = [
     'Podium',
     'Win',
 ]
-// Word list for the 2nd level
-const wordArrayL2 = [
-        'Amaze',
-        'Discover',
-        'Repeat',
-        'Create',
-        'Innovate',
-        'Succeed',
-        'Prepare',
-        'Adjust',
-        'Understand',
-        'Play',
-        'Excel',
-        'Enjoy',
-        'Relax',
-        'Assemble',
-        'Code',
-]
-
 //===================================================================================
 // Trigger the modal with user control of starting the game
 function intro() {
@@ -98,25 +77,12 @@ function startGame() {
     // Check the users input against the word displayed
     wordInput.addEventListener('input', checkMatch);
 }
-//Display the L1 words in order
+// Display the words at random
 function showWords() {
-    let counter = 0;
-
-    for(let i = 0; i < wordArray.length; i++) {
-        if(wordInput.value === wordDisplay.innerHTML) {
-            wordArray.shift();
-            console.log(wordArray[counter]) // Take this out later
-        }
-        wordDisplay.innerHTML = wordArray[counter];
-    }
-}
-// Display the L2 words at random
-function showWordsL2() {
     // Generate a random word
-    const randomWord = Math.floor(Math.random() * wordArrayL2.length);
+    const randomWord = Math.floor(Math.random() * wordArray.length);
     // Display the random word    
-    wordDisplay.innerHTML = wordArrayL2[randomWord];
-    console.log(wordArrayL2[randomWord]);
+    wordDisplay.innerHTML = wordArray[randomWord];
 }
 // Check if its a match on L1
 function checkMatch() {
@@ -129,25 +95,6 @@ function checkMatch() {
     scoreDisplay.innerHTML = `Score: ${score}`;
     // First way to stop the game
     if(score === 10){
-        clearInterval(gameInterval);
-        timeDisplay.innerHTML = '';
-        gameMessage.innerHTML = 'Level cleared!'
-        wordDisplay.classList.add('hide');
-        wordInput.classList.add('hide');
-        // Put a next level button here
-    }
-}
-// Check if its a match on L2
-function checkMatch2() {
-    if(wordInput.value === wordDisplay.innerHTML) {
-        score++;
-        showWordsL2();
-        wordInput.value = '';
-        timer = 4;
-    }
-    scoreDisplay.innerHTML = `Score: ${score}`;
-    // First way to stop the game
-    if(score === 10) {
         clearInterval(gameInterval);
         timeDisplay.innerHTML = '';
         gameMessage.innerHTML = 'Level cleared!'
@@ -196,12 +143,11 @@ function closeInstructions() {
         helpBtn.style.display = 'block';
     }
 }
-// Restart the L1 game on click -COME BACK TO THIS, IT ONLY USES THE REMAINING WORDS IN WORD LIST 1 LOOP
+// Restart the L1 game on click
 function restart() {
     clearInterval(gameInterval);
     wordInput.classList.remove('hide');
-    wordInput.removeEventListener('input', checkMatch2); // Removes the L2 game with 3 sec timer and replaces it with...
-    wordInput.addEventListener('input', checkMatch); // this L1 game with 5 sec timer
+    wordInput.addEventListener('input', checkMatch);
     wordDisplay.classList.remove('hide');
     score = 0;
     scoreDisplay.innerHTML = `Score: 0`;
@@ -211,19 +157,4 @@ function restart() {
     wordInput.focus();
     gameMessage.innerHTML = "";
     wordInput.value = '';
-}
-// Next level game with 3 seconds
-function nextLevel(){
-    clearInterval(gameInterval);
-    scoreDisplay.innerHTML = `Score: 0`;
-    score = 0;
-    timer = 4;
-    showWordsL2();
-    countdown();
-    wordDisplay.classList.remove('hide');
-    wordInput.classList.remove('hide');
-    wordInput.focus();
-    wordInput.value = '';
-    wordInput.removeEventListener('input', checkMatch);
-    wordInput.addEventListener('input', checkMatch2);
 }
