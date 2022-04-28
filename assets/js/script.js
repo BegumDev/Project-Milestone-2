@@ -128,7 +128,7 @@ function checkMatch() {
     }
     scoreDisplay.innerHTML = `Score: ${score}`;
     // First way to stop the game
-    if(score === 3){
+    if(score === 10){
         clearInterval(gameInterval);
         timeDisplay.innerHTML = '';
         gameMessage.innerHTML = 'Level cleared!'
@@ -147,7 +147,7 @@ function checkMatch2() {
     }
     scoreDisplay.innerHTML = `Score: ${score}`;
     // First way to stop the game
-    if(score === 8) {
+    if(score === 10) {
         clearInterval(gameInterval);
         timeDisplay.innerHTML = '';
         gameMessage.innerHTML = 'Level cleared!'
