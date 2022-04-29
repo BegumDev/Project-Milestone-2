@@ -1,5 +1,12 @@
 const formClear = document.querySelector('.form')
 
+let submitMsg = document.querySelector('.contact-msg')
+
+function submitResponse() {
+    let submitMsg = document.querySelector('.contact-msg');
+    submitMsg.innerHTML = `Thank you for submitting an email, we will be in touch with you shortly.`
+}
+
 function sendMail(contactForm) {
     emailjs.send('gmail', 'Test email', {
         'from_name':contactForm.name.value,
@@ -10,7 +17,7 @@ function sendMail(contactForm) {
         function(response) {
             console.log('Success', response);
             formClear.reset()
-            alert('Thanks, we will be in touch shortly.');
+            submitResponse();
         },
         function (error){
             console.log('Failed', error);
