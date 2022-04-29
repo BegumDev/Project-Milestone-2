@@ -3,22 +3,17 @@ document.addEventListener('DOMContentLoaded', initialise);
 
 //===================================================================================
 
-// DOM constants
-const timeDisplay = document.querySelector('.timer');
-const wordDisplay = document.querySelector('.word-display');
-const wordInput = document.querySelector('.word-input');
-const gameMessage = document.querySelector('.message');
-const scoreDisplay = document.querySelector('#score');
-const closeInstruction = document.querySelector('.close');
-const showInstruction = document.querySelector('.help-btn');
-const restartBtn = document.querySelector('.restart-btn');
-const introDisplay = document.querySelector('.introBtn');
-const modalDisplay = document.querySelector('.modal-container');
-
-// Event listeners
-closeInstruction.addEventListener('click', closeInstructions);
-showInstruction.addEventListener('click', showInstructions);
-restartBtn.addEventListener('click', restart);
+// DOM variables
+let timeDisplay = document.querySelector('.timer');
+let wordDisplay = document.querySelector('.word-display');
+let wordInput = document.querySelector('.word-input');
+let gameMessage = document.querySelector('.message');
+let scoreDisplay = document.querySelector('#score');
+let closeInstruction = document.querySelector('.close');
+let showInstruction = document.querySelector('.help-btn');
+let restartBtn = document.querySelector('.restart-btn');
+let introDisplay = document.querySelector('.introBtn');
+let modalDisplay = document.querySelector('.modal-container');
 
 // Add global variables
 let timer = 6;
@@ -61,6 +56,10 @@ const wordArray = [
 
 // Trigger the modal with user control of starting the game
 function initialise() {
+    // Event listeners
+    closeInstruction.addEventListener('click', closeInstructions);
+    showInstruction.addEventListener('click', showInstructions);
+    restartBtn.addEventListener('click', restart);
     // Listen out for the click, once clicked hide the modal and start the game
     introDisplay.addEventListener('click', () => {
         modalDisplay.classList.add('hide');
@@ -87,7 +86,7 @@ function showWords() {
 }
 // Check if its a match on L1
 function checkMatch() {
-    if(wordInput.value === wordDisplay.innerHTML) {
+    if (wordInput.value === wordDisplay.innerHTML) {
         score++;
         showWords();
         wordInput.value = '';
@@ -95,7 +94,7 @@ function checkMatch() {
     }
     scoreDisplay.innerHTML = `Score: ${score}`;
     // First way to stop the game
-    if(score === 10){
+    if (score === 10) {
         clearInterval(gameInterval);
         timeDisplay.innerHTML = '';
         gameMessage.innerHTML = 'Level cleared!'
