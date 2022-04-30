@@ -62,13 +62,15 @@ const wordArray = [
  * Trigger the modal with user control of starting the game
  */
 function initialise() {
+    showInstruction.addEventListener('click', showInstructions);
+    closeInstruction.addEventListener('click', closeInstructions);
+    restartBtn.addEventListener('click', restart);
     /**
      * Listen out for the click, once clicked hide the modal and start the game
      */
     introDisplay.addEventListener('click', () => {
         modalDisplay.classList.add('hide');
         startGame();
-        restartBtn.addEventListener('click', restart);
     });
 }
 
@@ -140,7 +142,6 @@ function countdown() {
  * Show instructions when help button is clicked
  */
 function showInstructions() {
-    showInstruction.addEventListener('click', showInstructions);
     let help = document.querySelector('.instructions');
     let helpBtn = document.querySelector('.help-btn');
     const helpDisplay = window.getComputedStyle(help).getPropertyValue('display');
@@ -157,7 +158,6 @@ function showInstructions() {
  * Hide instructions upon closing
  */
 function closeInstructions() {
-    closeInstruction.addEventListener('click', closeInstructions);
     let help = document.querySelector('.instructions');
     let helpBtn = document.querySelector('.help-btn');
 
