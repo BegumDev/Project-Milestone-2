@@ -2,6 +2,15 @@
 
 [View the live site here](https://begumdev.github.io/Type-It-Fast/)
 
+## Contents
+1. [User Experience](#user-experience-ux)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Testing](#testing)
+5. [Deployment](#deployment)
+6. [Credit](#credits)
+
+
 ## User Experience (UX)
 ***
 - ### User Stories
