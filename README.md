@@ -12,17 +12,19 @@
 - ### Design
     - #### Color Scheme
         <details><summary>The main colours used are; #3DBE57, #3DBE98, #3DA4BE, #3D63BE, #573DBE, #983DBE and #ffffff.</summary>
-        
-        ![Image of the colors used](assets/Images/color-swatch.JPG</details>
+
+        ![Image of the colors used](assets/Images/color-swatch.JPG)</details>
         
     - #### Typography
         - The fonts used were taken from Google fonts named 'Mukta' with a fall back of Sans-Serif.
 - ### Wireframes
     <details><summary>Homepage</summary>
+
     ![View homepage here](assets/Images/homepage-wireframe.png)
     </details>
 
     <details><summary>Contact Page</summary>
+
     ![View contact page here](assets/Images/contact-page-wireframe.png)
     </details>
 
@@ -52,15 +54,14 @@
 ## Technologies Used
 ***
 - ### Frameworks, Libraries and Programs used.
-    * Gitpod
-    * Github
-    * Bootstrap
-    * Font Awesome
-    * jQuery
-    * Google Maps API
-    * Email.js
-    * Jest
-    * 
+    * Gitpod - This was used to create the code for the website.
+    * Git - Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub.
+    * Github - This was used to store the projects code after being pushed from Git.
+    * Bootstrap - Bootstrap was used to assist with responsiveness on different media screens.
+    * Font Awesome - Icons were used to add detailing to the header.
+    * Google Maps API - This was used an API to display a map and marker on the contact page.
+    * Email.js - This was used as a means for the user to be able to send an email through.
+    * JSDocs - This was used to understand how to annotate code.
 
 ## Testing
 ***
