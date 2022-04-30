@@ -1,7 +1,9 @@
 let map;
 let marker;
 
-//initialise the map
+/**
+ * Initialise the map
+ */
 function initMap() {
 // Set the locations to be displayed
     const uni = {

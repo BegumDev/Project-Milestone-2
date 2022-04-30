@@ -1,9 +1,13 @@
-// On load, initialise the game
+/**
+ * This event listeners initialises the game as soon as the DOM content had loaded.
+ */
 document.addEventListener('DOMContentLoaded', initialise);
 
 //===================================================================================
 
-// DOM variables
+/**
+ * These are the global variables
+ */
 let timeDisplay = document.querySelector('.timer');
 let wordDisplay = document.querySelector('.word-display');
 let wordInput = document.querySelector('.word-input');
@@ -14,12 +18,12 @@ let showInstruction = document.querySelector('.help-btn');
 let restartBtn = document.querySelector('.restart-btn');
 let introDisplay = document.querySelector('.introBtn');
 let modalDisplay = document.querySelector('.modal-container');
-
-// Add global variables
 let timer = 6;
 let score = 0;
 
-// Word list for the 1st level
+/**
+ * The list of words to be displayed
+ */
 const wordArray = [
     'Understand',
     'Technical',
@@ -54,19 +58,23 @@ const wordArray = [
 ]
 //===================================================================================
 
-// Trigger the modal with user control of starting the game
+/**
+ * Trigger the modal with user control of starting the game
+ */
 function initialise() {
-    // Event listeners
-    closeInstruction.addEventListener('click', closeInstructions);
-    showInstruction.addEventListener('click', showInstructions);
-    restartBtn.addEventListener('click', restart);
-    // Listen out for the click, once clicked hide the modal and start the game
+    /**
+     * Listen out for the click, once clicked hide the modal and start the game
+     */
     introDisplay.addEventListener('click', () => {
         modalDisplay.classList.add('hide');
         startGame();
+        restartBtn.addEventListener('click', restart);
     });
 }
-// Start the game
+
+/**
+ * Start the game
+ */
 function startGame() {
     // Display the words
     showWords();
@@ -77,21 +85,26 @@ function startGame() {
     // Check the users input against the word displayed
     wordInput.addEventListener('input', checkMatch);
 }
-// Display the words at random
+/**
+ * Display the words at random
+ */
 function showWords() {
     // Generate a random word
     const randomWord = Math.floor(Math.random() * wordArray.length);
     // Display the random word    
     wordDisplay.innerHTML = wordArray[randomWord];
 }
-// Check if its a match on L1
+
+/**
+ * Check if the users word and the display word matches and increment score accordingly
+ */
 function checkMatch() {
     if (wordInput.value === wordDisplay.innerHTML) {
         score++;
         showWords();
         wordInput.value = '';
         timer = 6;
-    }
+    } // Put an else statement here with an error msg
     scoreDisplay.innerHTML = `Score: ${score}`;
     // First way to stop the game
     if (score === 10) {
@@ -100,9 +113,12 @@ function checkMatch() {
         gameMessage.innerHTML = 'Level cleared!'
         wordDisplay.classList.add('hide');
         wordInput.classList.add('hide');
-    }
+    } // Put an else statement here with an error msg
 }
-// Countdown timer
+
+/**
+ * Countdown timer
+ */
 function countdown() {
     gameInterval = setInterval(() => {
         if (timer > 0) {
@@ -119,8 +135,12 @@ function countdown() {
         timeDisplay.innerHTML = timer;
     }, 1000);
 }
-// Show instructions when help button is clicked
+
+/**
+ * Show instructions when help button is clicked
+ */
 function showInstructions() {
+    showInstruction.addEventListener('click', showInstructions);
     let help = document.querySelector('.instructions');
     let helpBtn = document.querySelector('.help-btn');
     const helpDisplay = window.getComputedStyle(help).getPropertyValue('display');
@@ -133,17 +153,23 @@ function showInstructions() {
         helpBtn.style.display = 'block';
     }
 }
-// Hide instructions upon closing
+/**
+ * Hide instructions upon closing
+ */
 function closeInstructions() {
+    closeInstruction.addEventListener('click', closeInstructions);
     let help = document.querySelector('.instructions');
     let helpBtn = document.querySelector('.help-btn');
 
     if (help.style.display = 'block') {
         help.style.display = 'none';
         helpBtn.style.display = 'block';
-    }
+    } // Put an else statement here with an error msg
 }
-// Restart the L1 game on click
+ 
+/**
+ * Restart the L1 game on click
+ */
 function restart() {
     clearInterval(gameInterval);
     wordInput.classList.remove('hide');
