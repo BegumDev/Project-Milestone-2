@@ -116,15 +116,22 @@
     * Once you sign into Github, click on 'new' on the left side of the page.
     * Add a template if needed and a repository name with an optional description.
     * Click 'create' repository.
-    * Once created - click on the green 'Gitpod' button which will open your workspace. (Note that you only need to access the workspace using Github for first time).
+    * Once created - click on the green 'Gitpod' button which will open your workspace. (Note that you only need to access the workspace using Github for the first time).
 - ### Gitpod
-    * 
-    * 
-    * 
-- ### Guthub Pages
-    * 
-    * 
-    * 
+    * The repository can be accessed from Gitpod by clicking on the 'dashboard' and finding the repo you need. Once you find the repo - you can click on the vertical 3 dots next to it and then 'open.'
+    * Once files were added, the following commands were used to manage the workspace;
+        * 'git add (+ file name)' for adding individual files or 'git add .' for adding several files.
+        * 'git status' can be used to check what files have been added.
+        * 'git commit -m (+ commit message)' will commit the files.
+        * 'git push' will push these files up to Github.
+- ### Github Pages
+    * The project was deployed to GitHub Pages using the following steps;
+    * Log in to GitHub and locate the GitHub Repository.
+    * At the top of the Repository, click on the 'settings' button.
+    * Scroll down the settings page until you find the "GitHub Pages" section.
+    * Under 'Source', click the dropdown called 'None' and select the branch as 'Main.'
+    * The page will automatically refresh.
+    * Scroll back through the page to locate the now published site link in the 'GitHub Pages' section.
 
 ## Credits
 ***
