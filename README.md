@@ -98,14 +98,17 @@
     - Laptops
 
 * ### Known bugs.
-    - On retarting the game, the word list has not repeated the loop thus only displaying whats left of the array.
+    - 
     - 
     - 
 
 * ### Fixed bugs.
-    - 
-    - 
-    - 
+    - Score increments despite timer reaching 0.
+        * Remove wordInput upon timer reaching 0 and display again on the restart function.
+    - Timer kept running in the background despite not being shown on the interface.
+        * Added a clearInterval function to stop the timer when it reaches 0.
+    - Fix bug in contact form which kept allowing emails to be sent without having filled out all fields of the form.
+        * Applied 'required' to the input tag.
 
 ## Deployment
 ***
