@@ -197,7 +197,7 @@
 4. Lighthouse Testing.
 
 * ### Automated Testing
-1. Jest Testing - this was used to test units from my code.
+1. Jest Testing - this was used to test units from the script.js part of my code.
 
     <details><summary>See results here</summary>
 
@@ -239,6 +239,8 @@
     * Under 'Source', click the dropdown called 'None' and select the branch as 'Main.'
     * The page will automatically refresh.
     * Scroll back through the page to locate the now published site link in the 'GitHub Pages' section.
+- ### Jest testing
+    * Type 'npm test' into Git commands to run tests on the script.js file.
 
 ## Credits
 ***
