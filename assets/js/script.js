@@ -185,4 +185,6 @@ function restart() {
     wordInput.value = '';
 }
 
-module.exports = wordArray;
+
+// module.exports = wordArray;
+if (typeof module != "undefined") module.exports = wordArray;
