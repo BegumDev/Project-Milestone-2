@@ -185,4 +185,4 @@ function restart() {
     wordInput.value = '';
 }
 
-module.exports = wordArray
+module.exports = wordArray;
