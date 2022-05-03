@@ -15,9 +15,9 @@
 ***
 - ### User Stories
     - #### Visitor Goals
-    1. I want to be able to find help if I dont understand the game without much distraction.
-    2. I want to be able to type in my answers and immediately see how it impacts my score.
-    3. I want to be able to contact the organisation with easy navigation.
+        1. I want to be able to find help if I dont understand the game without much distraction.
+        2. I want to be able to type in my answers and immediately see how it impacts my score.
+        3. I want to be able to contact the organisation with easy navigation.
 - ### Design
     - #### Color Scheme
         <details><summary>The main colours used are; #3DBE57, #3DBE98, #3DA4BE, #3D63BE, #573DBE, #983DBE and #ffffff.</summary>
@@ -122,6 +122,8 @@
     * Email.js - This was used as a means for the user to be able to send an email through.
     * JSDocs - This was used to understand how to annotate code.
     * Balsamiq - Used to construct wireframes of the website.
+    * Google Chrome Developer Tools - used to check console messages throughout.
+    * Jest - to unit test my code.
 
 ## Testing
 ***
@@ -203,14 +205,14 @@
     - Laptops
 
 * ### Known bugs.
-    - At present, the words display at random however they are not set to populate as unique thus duplication occurs. This will be coded to display a word once and be removed from the array in the future.
+    - At present, the words display at random however they are not set to populate as unique thus duplication occurs. This will be coded in the future to display a word once and be removed from the array.
 
 * ### Fixed bugs.
-    - Score increments despite timer reaching 0.
+    1. Score increments despite timer reaching 0.
         * Remove wordInput upon timer reaching 0 and display again on the restart function.
-    - Timer kept running in the background despite not being shown on the interface.
+    2. Timer kept running in the background despite not being shown on the interface.
         * Added a clearInterval function to stop the timer when it reaches 0.
-    - Fix bug in contact form which kept allowing emails to be sent without having filled out all fields of the form.
+    3. Fix bug in contact form which kept allowing emails to be sent without having filled out all fields of the form.
         * Applied 'required' to the input tag.
 
 ## Deployment
