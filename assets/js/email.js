@@ -1,11 +1,11 @@
-const formClear = document.querySelector('.form')
+const formClear = document.querySelector('.form');
 
-let submitMsg = document.querySelector('.contact-msg')
-let errorMsg = document.querySelector('.error-msg')
+let submitMsg = document.querySelector('.contact-msg');
+let errorMsg = document.querySelector('.error-msg');
 
 function submitResponse() {
     let submitMsg = document.querySelector('.contact-msg');
-    submitMsg.innerHTML = `Thank you for submitting an email, we will be in touch with you shortly.`
+    submitMsg.innerHTML = `Thank you for submitting an email, we will be in touch with you shortly.`;
 }
 
 function errorResponse() {
@@ -22,7 +22,7 @@ function sendMail(contactForm) {
     .then(
         function(response) {
             console.log('Success', response);
-            formClear.reset()
+            formClear.reset();
             submitResponse();
         },
         function (error){
