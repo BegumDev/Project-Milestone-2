@@ -22,9 +22,9 @@
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Email.JS integration -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
-    <script type="text/javascript">
+    <script>
         (function () {
             emailjs.init("GMsyG-ZcfBVb7hIMf");
         })();
@@ -66,14 +66,14 @@
         <div class="row">
             <form class="form" onsubmit="return sendMail(this)">
                 <div class="col-12 contact-form">
-                    <label for="name" id="name">Full Name:</label>
+                    <label for="name">Full Name:</label>
                     <br>
-                    <input type="text" class="name" name="fame" placeholder="Enter your full name..." required>
+                    <input type="text" class="name" id="name" name="fame" placeholder="Enter your full name..." required>
                     <br>
-                    <label for="email" id="email">Email Address:</label>
+                    <label for="email">Email Address:</label>
                     <br>
-                    <input type="email" class="email" name="emailaddress" placeholder="Enter your email address..." required>
-                    <label for="text-area" id="text-area">Your Message:</label>
+                    <input type="email" class="email" id="email" name="emailaddress" placeholder="Enter your email address..." required>
+                    <label for="message">Your Message:</label>
                     <br>
                     <textarea rows="8" cols="25" id="message" class="text-area" placeholder="Enter your message here..." required></textarea>
                     <br>

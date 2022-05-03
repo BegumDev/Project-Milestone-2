@@ -55,7 +55,7 @@ const wordArray = [
     'Educate',
     'Podium',
     'Win',
-]
+];
 //===================================================================================
 
 /**
@@ -112,7 +112,7 @@ function checkMatch() {
     if (score === 10) {
         clearInterval(gameInterval);
         timeDisplay.innerHTML = '';
-        gameMessage.innerHTML = 'Level cleared!'
+        gameMessage.innerHTML = 'Level cleared!';
         wordDisplay.classList.add('hide');
         wordInput.classList.add('hide');
     } // Put an else statement here with an error msg
