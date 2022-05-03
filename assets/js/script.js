@@ -110,7 +110,7 @@ function checkMatch() {
     } else {
         gameMessage.innerHTML = "";}
     scoreDisplay.innerHTML = `Score: ${score}`;
-    if (score === 5) {
+    if (score === 30) {
         clearInterval(gameInterval);
         timeDisplay.innerHTML = '';
         gameMessage.innerHTML = 'Level cleared...Great Job!';
