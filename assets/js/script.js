@@ -106,16 +106,17 @@ function checkMatch() {
         showWords();
         wordInput.value = '';
         timer = 6;
-    } // Put an else statement here with an error msg
+        gameMessage.innerHTML = 'Well done!';
+    } else {
+        gameMessage.innerHTML = "";}
     scoreDisplay.innerHTML = `Score: ${score}`;
-    // First way to stop the game
-    if (score === 10) {
+    if (score === 5) {
         clearInterval(gameInterval);
         timeDisplay.innerHTML = '';
-        gameMessage.innerHTML = 'Level cleared!';
+        gameMessage.innerHTML = 'Level cleared...Great Job!';
         wordDisplay.classList.add('hide');
         wordInput.classList.add('hide');
-    } // Put an else statement here with an error msg
+    } 
 }
 
 /**
@@ -164,7 +165,7 @@ function closeInstructions() {
     if (help.style.display = 'block') {
         help.style.display = 'none';
         helpBtn.style.display = 'block';
-    } // Put an else statement here with an error msg
+    }
 }
  
 /**
@@ -185,6 +186,4 @@ function restart() {
     wordInput.value = '';
 }
 
-
-// module.exports = wordArray;
 if (typeof module != "undefined") module.exports = wordArray;

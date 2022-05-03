@@ -20,7 +20,7 @@ function sendMail(contactForm) {
             submitResponse();
         },
         function (error){
-            console.log('Failed', error);
+            // error message display error response error msg
         }
     );
     return false;
