@@ -126,14 +126,12 @@ function countdown() {
     gameInterval = setInterval(() => {
         if (timer > 0) {
             timer--;
-            console.log('on'); // Keep this here to check timer is still working
         } else if (timer === 0) {
             // Second way to stop the game
             clearInterval(gameInterval);
             gameMessage.innerHTML = 'Time is up!';
             wordInput.classList.add('hide');
             scoreDisplay.innerHTML = `You scored: ${score}!`;
-            console.log('off'); // Keep this here to check timer is still working
         }
         timeDisplay.innerHTML = timer;
     }, 1000);
