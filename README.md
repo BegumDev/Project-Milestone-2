@@ -109,33 +109,48 @@
 
 * ### Testing user stories from user experience (UX).
     1. I want to be able to find help in how to play the game without much distraction.
-        * On loading the start up page, the user is met with a modal consuming the page.
-        ![Image of the start up modal](assets/Images/start-up-modal.JPG)
-        * On this modal the user is given clear instructions as to how to play the game.
-        * Click on the start button and the game will begin.
-        * If the user is still unsure, the user can click on the 'how to play' button which will show the instructions once again with a closing button to hide away again.
-        ![Image of the 'how to play button'](assets/Images/how-to-play.JPG)
-        ![Image of the how to play instructions](assets/Images/how-to-play-instructions.JPG)
+    <details><summary>Results</summary>
+    * On loading the start up page, the user is met with a modal consuming the page.
+
+    ![Image of the start up modal](assets/Images/start-up-modal.JPG)
+
+    * On this modal the user is given clear instructions as to how to play the game.
+    * Click on the start button and the game will begin.
+    * If the user is still unsure, the user can click on the 'how to play' button which will show the instructions once again with a closing button to hide away again.
+
+    ![Image of the 'how to play button'](assets/Images/how-to-play.JPG)
+    ![Image of the how to play instructions](assets/Images/how-to-play-instructions.JPG)
+    </details>
 
     2. I want to be able to type in my answers and immediately see how it impacts my score.
-        * As soon as the game starts, the word input box has a auto focus ready for them to type.
-        ![Image of the input focus](assets/Images/input-focus.JPG)
-        
-        * Every time the users answer matches, the message will display "Well done!" COME BACK TO THIS*****
+    <details><summary>Results</summary>
+    * As soon as the game starts, the word input box has a auto focus ready for them to type.
 
-        * If the answer is correct, the score will increment updating them in real time.
-        ![Imgae of the score dIsplay](assets/Images/score.JPG)
+    ![Image of the input focus](assets/Images/input-focus.JPG)
+        
+    * Every time the users answer matches, the message will display "Well done!" COME BACK TO THIS*****
+
+    * If the answer is correct, the score will increment updating them in real time.
+
+    ![Imgae of the score dIsplay](assets/Images/score.JPG)
+    </details>
 
     3. I want to be able to contact the organisation with easy navigation.
-        * A contact tab is placed in the header menu.
-        ![Image of the contact tab](assets/Images/contact-tab.JPG)
-        * Click on this link and it will take you to our contact form.
-        * Each input field has a label describing what is to go in aswell as placeholder text.
-        ![Image of the contact form](assets/Images/contact-form.JPG)
-        * All input fields are required to have text put in otherwise the form will not send.
-        * Once all fields are complete, click the submit button which then acknowledges the email has been sent and gives a message to the user letting them know we will be in touch shortly.
+    <details><summary>Results</summary>
+    * A contact tab is placed in the header menu.
 
-        ![Image of the email sent response](assets/Images/email-sent-response.JPG)
+    ![Image of the contact tab](assets/Images/contact-tab.JPG)
+
+    * Click on this link and it will take you to our contact form.
+    * Each input field has a label describing what is to go in aswell as placeholder text.
+
+    ![Image of the contact form](assets/Images/contact-form.JPG)
+
+    * All input fields are required to have text put in otherwise the form will not send.
+    * Once all fields are complete, click the submit button which then acknowledges the email has been sent and gives a message to the user letting them know we will be in touch shortly.
+
+    ![Image of the email sent response](assets/Images/email-sent-response.JPG)
+    </details>
 
 * ### Code Validation.
     - W3C HTML Validation.
@@ -156,7 +171,8 @@
     - Lighthouse Testing.
 
 * ### Automated Testing
-    - Jest Testing.
+    - Jest Testing - this was used to test units from my code.
+    ![Image of Jest tests](assets/Images/jest-test.JPG)
 
 * ### Supported screens and browsers.
     - Mobiles - Samsung Galaxy S9+, IPhone 12 Pro, Samsung Galaxy S20 Ultra, IPhone X
